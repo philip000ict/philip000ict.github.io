@@ -16,7 +16,7 @@
 
     -->
     </style>
-	<link href="css/teach.css" rel="stylesheet" type="text/css" media="screen" />
+	<link id="theme" href="css/databack.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -25,8 +25,8 @@
 		<button type="button"><a href="index.html">Home Button</a></button>
 		<button type="button"><a href="folio.html">Software Folio</a></button>
 		<button type="button"><a href="teach.html">Teaching Tools</a></button>
-		<button type="button"><a href="devops.html">Devops Folio</a></button>
-		<button type="button"><a href="foliogrey.html">Mech Application</a></button>
+		<button type="button"><a href="devops.html">Devops Mech</a></button>
+		<button  onclick="toggleTheme()" type="button" class = "right-panel"><a>Change CSS Theme</a></button>
 	</div>
     <div id = "wrapper">
 
@@ -37,6 +37,7 @@
 		</div>
 		<div class = "folio-title-left"><h1>2018 School Memory game</h1></div>
 		<div class = "folio-body" "folio-body-left">
+			<a href="powerpoint.html"><h2>Link to downloads page</h2></a>
 			<p>School Memory Game is an app for enjoyably producing connections between image and word</p>
 			<p>This was originally developed as a series of PowerPoint presentations</p>
 			<p>The presentation allows the teacher to entertain the class while introducing and reinforcing vocabulary</p>
@@ -113,11 +114,24 @@
 <!-- ###################  element 5 ################################ -->
 
 
+		<hr />
+		<div id = "footer">
+			Webform designed by Philip Barnes &copy;
+		</div>
 
+    <script>
+        function toggleTheme() {
+            // Select the <link> element
+            let theme = document.getElementById('theme');
 
-
-<br>
-   <div></div>
+            // Toggle between light.css and dark.css
+            if (theme.getAttribute('href') == "css/databack.css") {
+                theme.setAttribute('href', "css/grey.css");
+            } else {
+                theme.setAttribute('href', "css/databack.css");
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -9,12 +10,12 @@ body {
 	background-image: linear-gradient(lightblue 33%, blue);
 	position: fixed;
 	top: 0;
-	width: 100%;
+	width: 98%;
 	z-index: 2;
     color: #fff;
     text-align: center;
     height: 150px;
-	border-radius: 0px;
+	margin:0 20px 0 20px;
 	padding: 10px 0;
 }
 
@@ -34,7 +35,19 @@ body {
 	border-radius: 15px;
 }
 
-
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 50px -10px 0 -20px ;
+}
+.grid-item {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  margin:auto;
+}
 .folio {
 	display: grid;
 	grid-template-columns: auto auto auto;
@@ -107,11 +120,14 @@ h1 		{
 }
 h2		{
 	text-align:center;
-	background-color:#aabbcc;
-	color:#FFFFFF;
+	background-color:green;
+	color:white;
 	margin: 5px;
 		}
-
+.right-panel {
+	float: right;
+	margin-right: 20px;
+	}
 #footer {
 	clear: right;
 	font-size:small;

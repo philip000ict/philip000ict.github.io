@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Philip Barnes - Software Developer</title>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link  id="theme" href="css/grey.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+        @media screen and (min-height: 100vh) {
+		  .wrapper {
+			  width: 100vw;
+			  height: 100%;
+		  }
+
+		  div#main {
+			  font-size: 4vw;
+		  }
+		}
+        .header {
+			margin: 5px;
+        }
+        .container {
+            max-width: 80vw;
+            margin: 200px auto;
+            padding: 0 20px;
+        }
+        h1 {
+ 		 background-color: black;
+  		color: white;
+		}
+        h2 {
+            color: #333;
+        }
+        .portfolio-item {
+            margin-bottom: 20px;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+	<div id = "header">
+		<h1>Philip Barnes Folio</h1>
+		<button type="button"><a href="index.html">Home Button</a></button>
+		<button type="button"><a href="folio.html">Software Folio</a></button>
+		<button type="button"><a href="teach.html">Teaching Tools</a></button>
+		<button type="button"><a href="devops.html">Devops Folio</a></button>
+		<button type="button"><a href="foliogrey.html">Mech Application</a></button>
+		<button  onclick="toggleTheme()" type="button"><a>Change CSS Theme</a></button>
+
+	</div><br>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I am a passionate Software Developer who enjoys Architecting Structures in Cyberspace</p>
+
+        <h2>Portfolio Pages</h2>
+        <div class="grid-container">
+			<div class = "grid-item"><a href="folio.html">
+				<img src="images/folio1.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
+				<p>Software Development page</p></a>
+			</div>
+			<div class = "grid-item"><a href="devops.html">
+				<img src="images/folio2.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
+				<p>Devops page</p></a>
+			</div>
+			<div class = "grid-item"><a href="foliogrey.html">
+				<img src="images/folio3.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
+				<p>Software Mechanical page</p></a>
+			</div>
+		</div>
+		<h2>Education</h2>
+		  <h3>2024-2025 Deakin University &nbsp; Graduate Certificate of Cloud Architectures and Solutions</h3>
+				<ul>completed units
+					<li>Software Deployment And Operation</li>
+					<li>Computer Networks And Security</li>
+					<li>Prior Learning</li>
+				</ul>
+		<h3>2013-2015 Deakin University &nbsp; Master of Information Technlogoy, Software Development</h3>
+		<h3>2010-2013 Southern Cross University &nbsp; Bachelor of Information Technlogoy, Software Development</h3>
+		<h2>Certificates</h2>
+				<ul>
+					<li>2024 Microsoft Deploy cloud native apps using Azure Container Apps</li>
+					<li>2021 Google Certificate Developing Applications with Google Cloud Platform</li>
+					<li>2021 Google Certificate Architecting with Google Kubernetes Engine</li>
+					<li>2020 150 hr Arizona State University TESOL</li>
+				</ul>
+
+		<hr />
+		<div id = "footer">
+			Webform designed by Philip Barnes &copy;
+		</div>
+
+    <script>
+        function toggleTheme() {
+            // Select the <link> element
+            let theme = document.getElementById('theme');
+
+            // Toggle between light.css and dark.css
+            if (theme.getAttribute('href') == "css/databack.css") {
+                theme.setAttribute('href', "css/grey.css");
+            } else {
+                theme.setAttribute('href', "css/databack.css");
+            }
+        }
+    </script>
+</body>
+</html>
+

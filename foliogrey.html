@@ -16,7 +16,7 @@
 
     -->
     </style>
-	<link href="css/grey.css" rel="stylesheet" type="text/css" media="screen" />
+	<link id="theme" href="css/grey.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 
 <body>
@@ -25,8 +25,8 @@
 		<button type="button"><a href="index.html">Home Button</a></button>
 		<button type="button"><a href="folio.html">Software Folio</a></button>
 		<button type="button"><a href="teach.html">Teaching Tools</a></button>
-		<button type="button"><a href="devops.html">Devops Folio</a></button>
-		<button type="button"><a href="foliogrey.html">Mech Application</a></button>
+		<button type="button"><a href="devops.html">Devops Mech</a></button>
+		<button  onclick="toggleTheme()" type="button" class = "right-panel"><a>Change CSS Theme</a></button>
 	</div>
 <div id = "wrapper">
 <!-- ###################  element1 -3D print research ###################### -->
@@ -79,15 +79,24 @@
 
 
 
-
-<br>
-   <div></div>
-
 		<hr />
-			<div id = "footer">
-				Webform designed by Philip Barnes &copy;
-			</div>
-    </div>
+		<div id = "footer">
+			Webform designed by Philip Barnes &copy;
+		</div>
+
+        <script>
+        function toggleTheme() {
+            // Select the <link> element
+            let theme = document.getElementById('theme');
+
+            // Toggle between light.css and dark.css
+            if (theme.getAttribute('href') == "css/databack.css") {
+                theme.setAttribute('href', "css/grey.css");
+            } else {
+                theme.setAttribute('href', "css/databack.css");
+            }
+        }
+    </script>
 </body>
 </html>
 
