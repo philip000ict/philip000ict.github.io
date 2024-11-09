@@ -11,6 +11,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 98%;
+	min-width: 1000px;
 	z-index: 2;
     color: #fff;
     text-align: center;
@@ -23,7 +24,7 @@ body {
 	border: 5px outset #aaaaff;
 	height:auto;
 	max-width: 90%;
-	min-width: 800px;
+	min-width: 1000px;
 	background-color: #c6d3fa;
 	box-shadow: 15px 15px 30px blue;
 	border-radius: 15px;
@@ -120,13 +121,17 @@ h1 		{
 }
 h2		{
 	text-align:center;
-	background-color:green;
+	background-color:darkblue;
 	color:white;
 	margin: 5px;
 		}
 .right-panel {
 	float: right;
 	margin-right: 20px;
+	}
+.left-panel {
+	float: left;
+	margin-left: 20px;
 	}
 #footer {
 	clear: right;

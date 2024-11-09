@@ -17,6 +17,8 @@
     -->
     </style>
 	<link id="theme" href="css/grey.css" rel="stylesheet" type="text/css" media="screen" />
+	<link id="theme" href="css/slider.css" rel="stylesheet" type="text/css" media="screen" />
+
 </head>
 
 <body>
@@ -29,24 +31,40 @@
 		<button  onclick="toggleTheme()" type="button" class = "right-panel"><a>Change CSS Theme</a></button>
 	</div>
     <div id = "wrapper">
-		        <h1>Portfolio Pages</h1>
-<!-- ###################  element1 VUE3 Flag ####################### -->
-	<div class = "folio grid-container">
+	<h1>Portfolio  CSS  sliding pages</h1>
+	<div class="slide-container" style="background-color: lightblue;">
+	  <div class="panel active" style="background-image: url('images/screen3.png')">
+	  </div>
+	  <div class="panel" style="background-image: url('images/screen0.png')">
+		  <h3></h3>
+		</div>
+		<div class="panel" style="background-image: url('images/screen4.png')">
+		  <h3></h3>
+		</div>
+		<div class="panel" style="background-image: url('images/screen5.png')">
+		  <h3></h3>
+		</div>
+		<div class="panel" style="background-image: url('images/screen3.png')">
+		  <h3></h3>
+		</div>
+  </div><h1>Click on the page sections</h1>
+
+  <!-- ###################  element1 VUE3 Flag ####################### -->
         <div class="grid-container">
 			<div class = "grid-item"><a href="folio.html">
-				<img src="images/folio1.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
+				<img src="images/screen0.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
 				<p>Software Development page</p></a>
 			</div>
 			<div class = "grid-item"><a href="devops.html">
-				<img src="images/folio2.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
+				<img src="images/screen5.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
 				<p>Devops page</p></a>
 			</div>
 			<div class = "grid-item"><a href="foliogrey.html">
-				<img src="images/folio3.png" alt="screenshot of software development" width="300px" height="200px" style="margin:20px">
-				<p>Software Mechanical page</p></a>
+				<img src="images/screen4.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
+				<p>Software Teaching Tools</p></a>
 			</div>
 		</div>
-	</div>
+
 <!-- ###################  element2 VUE3 scrape ##################### -->
 	<div>
 		<h1>Education</h1>
@@ -67,6 +85,8 @@
 				</ul>
 
 	</div>
+
+
 <!-- ###################  element3 DataBackFormServer ############## -->
 
 <!-- ###################  element 4 ################################ -->
@@ -80,18 +100,32 @@
 			Webform designed by Philip Barnes &copy;
 		</div>
 
-        <script>
-        function toggleTheme() {
-            // Select the <link> element
-            let theme = document.getElementById('theme');
+    <script>
+		const panels = document.querySelectorAll('.panel')
 
-            // Toggle between light.css and dark.css
-            if (theme.getAttribute('href') == "css/databack.css") {
-                theme.setAttribute('href', "css/grey.css");
-            } else {
-                theme.setAttribute('href', "css/databack.css");
-            }
-        }
+		panels.forEach((panel) => {
+			panel.addEventListener('click', () => {
+				removeActiveClasses()
+				panel.classList.add('active')
+			})
+		})
+
+		function removeActiveClasses(){
+			panels.forEach(panel => {
+				panel.classList.remove('active')
+			})
+	}
+		function toggleTheme() {
+		// Select the <link> element
+		let theme = document.getElementById('theme');
+
+		// Toggle between light.css and dark.css
+		if (theme.getAttribute('href') == "css/databack.css") {
+			theme.setAttribute('href', "css/grey.css");
+		} else {
+			theme.setAttribute('href', "css/databack.css");
+		}
+	}
     </script>
 </body>
 </html>
