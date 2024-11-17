@@ -1,0 +1,210 @@
+<html>
+<head>
+    <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--
+		Designed by Philip Barnes
+		https://philip000ict.github.io/
+		30/10/2024
+		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
+    -->
+    <title>tileTest Page</title>
+    <style type="text/css"></style>
+    <link href="flipper.css" rel="stylesheet" type="text/css" />
+    <!-- <input type="file" id="csv-input" href="gems.csv"> -->
+    <script src="csv-import.js"></script>
+</head>
+
+<body>
+    <div id="wrapper" >
+        <div id = "header"><h1>Game-on</h1></div>
+        <div id = "playbox" class = "panel" style="margin-top:10px;" >Game-on</div>
+        <div id="grid-container"></div>
+        <button type="button" id="reset-btn" class = "panel" >Play On</button>
+    </div>
+
+<script>
+
+    let wide = 5;
+    let deep = 4;
+    let griditem = "";
+    let gridloco = "";
+    let tileArray = [];
+    let gemPairs = [];
+    let wideId = ["A", "B","C","D","E","F"]
+    let parentDiv = document.getElementById('grid-container');
+
+    let tile1="";
+    let tile2="";
+    let turn1="";
+    let turn2="";
+    let choice=0;
+
+    let gameTiles=[];
+
+    class Tile {
+            constructor(idtile, mtile, face, match){
+                this.idtile = idtile;       //A!
+                this.ftile = idtile;        //A1
+                this.mtile = mtile;         //C3
+                this.face = face;           // this face value
+                this.match = match;         // matching tile face value
+                // this.question = question;
+                // this.answer = answer;
+                this.isface = false;
+                };
+            getmatch(tileid){
+                if( this.atile == tileid){this.isface = false; return this;}
+                else if ( this.qtile == tileid){this.isface = true; return this}
+                else{return false }
+            }
+            getans(){return this.match};
+            getid(){return this.idtile};
+        }
+
+    init();
+    console.log("init complete, tiles in play");
+
+
+    const tiles = document.querySelectorAll('.tile')
+		tiles.forEach((tile) => {
+			//console.log(tile)
+		});
+
+    function init(){
+        gridInit();         //initialise gameplay grid
+        gameTopicInit();    //load game topic into array from external file
+        arrayInit();        //randomise game tiles
+        //tileInit();
+    }
+
+    function gridInit(){
+        for(i=0; i< deep; i++){
+            for(w=1; w <= wide; w++){
+                gridloco = wideId[i] + w;
+                tileArray.push(gridloco);
+                griditem = '<div class="grid-item tile" id="'+ gridloco + '" >' + gridloco + '</div>';
+                let childDiv = document.createElement('div');
+                childDiv.innerHTML = griditem;
+                childDiv.addEventListener("click", tileturn);
+                parentDiv.appendChild(childDiv);
+                }
+            }
+        console.log("gridInit complete");
+        }
+
+    function gameTopicInit(){
+        for(i=0; i < Names.length; i +=2){
+            let gempair = [];
+            gempair[0] = '<img src="'+Names[i]+'" />';
+            gempair[1] = Names[i+1];
+            gemPairs.push(gempair);
+            }
+            console.log("gameTopicInit complete")
+        }  
+
+    function arrayInit(){
+        //deep copy of variables to preserve content
+        qarray = JSON.parse(JSON.stringify(gemPairs));
+        tarray = JSON.parse(JSON.stringify(tileArray));
+
+        //assign random q&a to gameTiles array
+        let tilecount = wide*deep;
+        while(tarray.length>0) {
+
+            let tl = tarray.length;
+            let ql = qarray.length
+            let getTile1 = Math.floor(Math.random() * tl);
+            let getTile2 = Math.floor(Math.random() * (tl-1));
+            let getface = Math.floor(Math.random() * ql);
+
+            //get tiles and remove from tarray
+            let tile1 = tarray[getTile1];
+            tarray.splice(getTile1,1);
+            let tile2 = tarray[getTile2];
+            tarray.splice(getTile2,1)
+
+            //get Q&A and remove from qarray
+            let face1 = qarray[getface][0];
+            let match1 = qarray[getface][1];
+            qarray.splice(getface,1)
+            let tile = new Tile(tile1,tile2, face1, match1);
+            gameTiles.push(tile)
+            tile = new Tile(tile2,tile1, match1, face1);
+            gameTiles.push(tile)
+            //console.log("gameTiles[A1] = "+gameTiles.getid);
+        }
+
+        console.log("arrayInit complete");
+    }
+
+    function tileturn(){
+        let clickTile = event.target.getAttribute("id");
+        console.log("choice =  "+ choice);
+        console.log("clicktile =  "+ clickTile);
+        console.log("pregame tile1 = " + JSON.stringify(tile1));
+        console.log("pregame tile2 = " + JSON.stringify(tile2));
+        for(i=0; i<gameTiles.length; i++){
+            if(choice ===0){
+                if(gameTiles[i].getid()===clickTile){
+                    console.log("choice = "+choice);
+                    tile1 = JSON.parse(JSON.stringify(gameTiles[i]));
+                    tile1 = gameTiles[i];
+                    console.log("tile1 = "+JSON.stringify(tile1));
+                    //console.log("ingame tile1 = " + JSON.stringify(tile1));
+                    //tile1.idtile=i; 
+                    event.target.innerHTML = tile1.face;
+                    //document.getElementById(tile1.idtile).removeEventListener("click", tileturn);
+                    event.target.removeEventListener("click", tileturn);
+                    choice=1;
+                    
+                    
+                    break;
+                }
+            }else if(choice === 1){
+                if(gameTiles[i].getid()===clickTile){
+                    console.log("choice = "+choice);
+                    tile2 = JSON.parse(JSON.stringify(gameTiles[i]));
+                    //tile2.tileid=i;
+                    console.log("ingame tile2 = " + JSON.stringify(tile2));
+                    event.target.innerHTML = tile2.face;
+                    choice = 2;
+                    // event.target.removeEventListener("click", tileturn);
+                   // document.getElementById(tile2.idtile).removeEventListener("click", tileturn);
+                    console.log("Choice = "+choice+" \ntile1 = "+tile1.mtile+" tile2 = "+tile2.idtile);
+                    // if(turn2 === turn1){alert("Winner Dogs Dinner")
+                    // choice = 2;
+                       event.target.removeEventListener("click", tileturn);
+                       break;
+                    };
+                
+            }else if(choice === 2){console.log("Choice = "+choice+" \ntile1 = "+tile1.mtile+" tile2 = "+tile2.idtile);
+                if(tile1.mtile == tile2.idtile){
+                    alert("it's a match");
+                    choice = 0;
+                    break
+                }else if(tile1.mtile != tile2.idtile){
+                    alert("That's NO how ya make porridge");
+                    document.getElementById(tile1.idtile).innerHTML = tile1.idtile;
+                    document.getElementById(tile2.idtile).innerHTML = tile2.idtile;
+                    choice=0;
+                    break
+                }
+            choice=0;
+            console.log("Choice = "+choice);
+            break;
+        }
+    }}
+
+    function tilereset(){if(choice===2){
+        if(tile1.getAttribute("id") === tile2.getAttribute("ans")){
+            alert("Winner Dog's Dinner!");
+        }else{
+            tile1.addEventListener("click", tileturn, false);
+            tile1.innerHTML = tile1.getAttribute("id");
+            tile2.addEventListener("click", tileturn, false);
+            tile2.innerHTML = tile2.getAttribute("id");
+        }choice = 0;}}//catch(err){console.log(err);}
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <!--
+		Designed by Philip Barnes
+		clarencevalleyit.com.au
+		05/11/2012
+    -->
+    <title>P000i</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+		* {	box-sizing: border-box;	}
+		body {font-family: 'Lato', sans-serif;background-color: #aaa;color: #222;	overflow-x: hidden;	margin:0;}
+		.container {background-color: #fafafa;	transform-origin: top left;	transition: transform 0.5s linear;	}
+		.container.show-nav{transform: rotate(-20deg);}
+		.container-rotator {background-color: #fafafa;	transform-origin: top left ;transition: transform 0.5s linear;}
+		.container-rotator.show-nav{transform: rotate(-20deg);}
+        .slide-container {display: flex;width: 80%;margin: auto;}
+        .panel {background-size: 500px;background-position: center;background-repeat: no-repeat;height: 380px;border-radius: 50px;
+            color: #fff;cursor: pointer;flex: 0.5;margin: 10px;position: relative;transition: flex 0.7s ease-in;}
+        .panel h3 {color: darkblue;font-size: 18px;position:absolute;bottom: 5px;right: 20px;margin: 0;opacity:0;}
+        .panel.active {flex: 5;}.panel.active h3 {opacity: 1;transition: opacity 0.3s ease-in 0.4s;}
+        @media(max-width: 480px){.slide-container {width: 100vw;}.panel:nth-of-type(4),.panel:nth-of-type(5){display:none;}}
+		.grid-container {display: grid;height: 300px;grid-template-columns: auto auto auto;padding: 10px;margin: 0;}
+		.grid-item {padding: 10px;font-size: 18px;text-align: center;}
+		.grid-item-small{padding: 10px;width: 150px;height:100px;border: 2px;border-color:  blue;font-size: 18px;text-align: center;  }
+		h1 {background-color: black;color: white;text-align:center;}
+		h2	{text-align:center;background-color:darkblue;color:white;margin: 5px;font-size:24px;}
+    </style>
+	<link id="theme" href="css/grey.css" rel="stylesheet" type="text/css" media="screen" />
+	<link id="theme" href="css/slider.css" rel="stylesheet" type="text/css" media="screen" />
+	<link id="theme" href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+
+	<div id = "wrapper" style="padding-top: 400px;">
+
+	<div class="container-rotator show-nav">
+        <div class="circle-container">
+            <div class="circle">
+                <button id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+<!-- ###################  ROTATORS ####################### -->
+
+			<!-- ###################  SLIDERS ####################### -->
+			<h1>Portfolio  CSS  sliding pages</h1>
+			<div class="slide-container" style="background-color: lightblue;">
+			<div class="panel active" style="background-image: url('images/screen3.png')">
+			</div>
+			<div class="panel" style="background-image: url('images/screen0.png')">
+				<h3></h3>
+				</div>
+				<div class="panel" style="background-image: url('images/screen4.png')">
+				<h3></h3>
+				</div>
+				<div class="panel" style="background-image: url('images/screen5.png')">
+				<h3></h3>
+				</div>
+				<div class="panel" style="background-image: url('images/screen3.png')">
+				<h3></h3>
+				</div>
+				<div class="panel" style="background-image: url('images/screen1.1.png')">
+				<h3></h3>
+				</div>
+				<div class="panel" style="background-image: url('images/screen1.3.png')">
+				<h3></h3>
+				</div>
+		</div><h2  style="text-align:right">Click on the page sections &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^^^^^^^^^^^^</h2>
+
+		<!-- ###################  element1 VUE3 Flag ####################### -->
+				<div class="grid-container">
+					<div class = "grid-item"><a href="folio.html">
+						<img src="images/screen0.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
+						<p>Software Development page</p></a>
+					</div>
+					<div class = "grid-item"><a href="devops.html">
+						<img src="images/screen5.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
+						<p>Devops page</p></a>
+					</div>
+					<div class = "grid-item"><a href="foliogrey.html">
+						<img src="images/screen4.png" alt="screenshot of software development" width="150px" height="100px" style="margin:20px; border: 3px solid #555;">
+						<p>Software Teaching Tools</p></a>
+					</div>
+				</div>
+		</div>
+</div>
+
+    <script>
+		const panels = document.querySelectorAll('.panel')
+		const open = document.getElementById('open')
+		const close = document.getElementById('close')
+		const container = document.querySelector('.container-rotator')
+
+		open.addEventListener('click', () => container-rotator.classList.add('show-nav'))
+
+		close.addEventListener('click', () => container-rotator.classList.remove('show-nav'))
+
+		panels.forEach((panel) => {
+			panel.addEventListener('click', () => {
+				removeActiveClasses()
+				panel.classList.add('active')
+			})
+		})
+
+		function removeActiveClasses(){
+			panels.forEach(panel => {
+				panel.classList.remove('active')
+			})
+	}
+		function toggleTheme() {
+		// Select the <link> element
+		let theme = document.getElementById('theme');
+
+		// Toggle between light.css and dark.css
+		if (theme.getAttribute('href') == "css/databack.css") {
+			theme.setAttribute('href', "css/grey.css");
+		} else {
+			theme.setAttribute('href', "css/databack.css");
+		}
+	}
+    </script>
+</body>
+</html>
+
