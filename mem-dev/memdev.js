@@ -1,78 +1,7 @@
-<html>
-<head>
-    <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!--
-		Designed by Philip Barnes
-		https://philip000ict.github.io/
-		30/10/2024
-		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
-    -->
-    <title>tileTest Page</title>
-    <link href="flipper.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-        #wrapper{
-            height: 850px;
-        }
-        #grid-container{
-            grid-template-columns: auto auto auto auto auto ;
-        }
-        h1 {
-            background-color: black;
-            color: white;
-            text-align:center;
-        }
-        button {
-            width: auto;
-            height:40px;
-            border: 4px inset #7e7e7e;
-            padding: 3px 10px;
-            color:#999999;
-            background-color: powderblue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            margin:10px;
-        }
-        a{
-            color:rgb(32, 32, 32);
-        }
-    </style>   
-    <!-- <input type="file" id="csv-input" href="gems.csv">
-    <script src="toys-csv.js"></script> -->
-    <script src="csv-import.js"></script> 
-    
-</head>
 
-<body>
-	<div id = "header">
-		<h1>Philip Barnes </h1>
-		<button type="button"><a href="../index.html">Home Button</a></button>
-		<button type="button"><a href="../folio.html">Software Folio</a></button>
-		<button type="button"><a href="../teach.html">Teaching Tools</a></button>
-		<button type="button"><a href="../devops.html">Devops Mech</a></button>
-	</div>
-    <div id="wrapper" >
-        <div class="button-panel" style="margin-top: 160px;">
-            <button type="button"  id = "playbox" class = "panel"  ></button>
-            <button type="button"  id = "playbox0" class = "panel"  >Players</button>
-            <button type="button"  id = "playbox1" class = "panel"  >0</button>
-            <button type="button"  id = "playbox2" class = "panel"  >0</button>
-        </div>
-        <div id="grid-container"></div>
-        <div class="button-panel" >
-            <button class = "panel" ><a href="../index.html" style="color:white;">Home</a></button>
-            <button class = "panel" ><a href="memgems.html" style="color:white;">Gems 5x6</a></button>
-            <button class = "panel" ><a href="memtoys.html" style="color:white;">Toys 5x6</a></button>
-        </div>
-    </div>
 
-<script>
-
-    let wide = 5;
-    let deep = 4;
+    let wide = 6;
+    let deep = 5;
     let griditem = "";
     let gridloco = "";
     let tileArray = [];
@@ -84,22 +13,16 @@
 
     let tile1="";
     let tile2="";
-    let turn1="";
-    let turn2="";
     let choice=0;
 
     let gameTiles=[];
 
     class Tile {
             constructor(idtile, mtile, face, match){
-                this.idtile = idtile;       //A!
-                //this.ftile = idtile;        //A1
+                this.idtile = idtile;       //A1
                 this.mtile = mtile;         //C3
                 this.face = face;           // this face value
                 this.match = match;         // matching tile face value
-                // this.question = question;
-                // this.answer = answer;
-                //this.isface = false;
                 };
             getmatch(tileid){
                 if( this.atile == tileid){this.isface = false; return this;}
@@ -109,9 +32,8 @@
             getans(){return this.match};
             getid(){return this.idtile};
         }
-    //gridInit();
-    init(gems);
-    console.log("init complete,"+gems+" tiles in play");
+
+    init(csvtiles);
 
 
     const tiles = document.querySelectorAll('.tile')
@@ -120,6 +42,7 @@
 		});
 
     function init(tileset){
+        console.log("tileset.length = "+tileset.length)
         gridInit();         //initialise gameplay grid
         gameTopicInit(tileset);    //load game topic into array from external file
         arrayInit();        //randomise game tiles
@@ -128,6 +51,7 @@
     }
 
     function gridInit(){
+        console.log("deep = "+deep)
         for(i=0; i< deep; i++){
             for(w=1; w <= wide; w++){
                 gridloco = wideId[i] + w;
@@ -139,7 +63,7 @@
                 parentDiv.appendChild(childDiv);
                 }
             }
-        console.log("gridInit complete");
+        console.log("gridInit complete"+deep);
         }
 
     function gameTopicInit(Names){
@@ -149,12 +73,12 @@
             gempair[1] = Names[i+1];
             gemPairs.push(gempair);
             }
-            document.getElementById("playbox").innerHTML="Gems";
+            //document.getElementById("playbox").innerHTML="Gems";
             console.log("gameTopicInit complete")
         }  
     function playersInit(){
         document.getElementById("playbox0").innerHTML="Player "+ player ;
-            document.getElementById("playbox").innerHTML="Gems";
+            //document.getElementById("playbox").innerHTML="Gems";
             console.log("playerInit complete")
         }
     function arrayInit(){
@@ -186,16 +110,9 @@
             gameTiles.push(tile)
             tile = new Tile(tile2,tile1, match1, face1);
             gameTiles.push(tile)
-            //console.log("gameTiles[A1] = "+gameTiles.getid);
         }
-
         console.log("arrayInit complete");
     }
-
-    // function buttonInit(){
-    //     document.getElementById(changebtn).addEventListener("click", changetheme);
-
-    // }
 
 function changetheme(){
     console.log("The times they are a' changin'")
@@ -236,8 +153,6 @@ function changetheme(){
                     // event.target.removeEventListener("click", tileturn);
                    // document.getElementById(tile2.idtile).removeEventListener("click", tileturn);
                     console.log("Choice = "+choice+" \ntile1 = "+tile1.mtile+" tile2 = "+tile2.idtile);
-                    // if(turn2 === turn1){alert("Winner Dogs Dinner")
-                    // choice = 2;
                        event.target.removeEventListener("click", tileturn);
                        break;
                     };
@@ -247,16 +162,10 @@ function changetheme(){
                 if(tile1.mtile == tile2.idtile){
                     alert("it's a match");
                     score(player);
-                    //change(player);
-                    //choice = 0;
-                    //break
                 }else if(tile1.mtile != tile2.idtile){
                     alert("That's NO how ya make porridge");
                     document.getElementById(tile1.idtile).innerHTML = tile1.idtile;
                     document.getElementById(tile2.idtile).innerHTML = tile2.idtile;
-                    //change(player);
-                    //choice=0;
-                    //break
                 }
                 player = change(player);
                 choice=0;
@@ -285,6 +194,4 @@ function score(player){
         tileArray=[];
         init(toys);
         choice = 0;}//catch(err){console.log(err);}
-    </script>
-</body>
-</html>
+

@@ -2,12 +2,24 @@ body{
     width: 100vw;
     height: 100vh;
     background: black;
-
+}
+#header {
+	background-image: linear-gradient(lightgrey 33%, grey);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	min-width: 1000px;
+	z-index: 2;
+	padding:0 0 20px 0;
+    color: #fff;
+    text-align: center;
+    height: 130px;
 }
 #wrapper{
     margin:auto;
+    justify-content: space-evenly;
     width: 95%;
-    height: 1000px;
+    height: 100%;
     background: powderblue;
     border-width: 5px;
     border-color: yellow;
@@ -16,17 +28,15 @@ body{
 h1{
     text-align: center;
 }
-
 img{
-    height:150px;
-    width:200px;
+    height:140px;
+    width:250px;
     border-radius: 10px;
-
 }
-
 #grid-container{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto auto auto;
     gap: 10px;
     margin:auto;
     width: 95%;
@@ -40,8 +50,8 @@ img{
 .grid-item{
     display: grid;
     gap: 10px;
-    height: 150px;
-    width:200px;
+    height: 140px;
+    width:250px;
     margin:auto;
     font-weight:bold;
     font-size:36px;
@@ -54,11 +64,11 @@ img{
     border-radius: 10px;
 }
 .panel{
-    display: grid;
+    display: inline;
     gap: 10px;
     height: 75px;
-    width:40%;
-    margin: 10px 0 10px 20px;
+    width:20%;
+    margin: 20px;
     font-weight:bold;
     font-size:36px;
     text-align:center;
@@ -68,4 +78,13 @@ img{
     border-width: 5px;
     border-color: yellow;
     border-radius: 10px;
+}
+.button-panel{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+a{
+    color:aliceblue;
+    text-decoration: none;
 }

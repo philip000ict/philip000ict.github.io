@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!--
+		Designed by Philip Barnes
+		https://philip000ict.github.io/
+		30/10/2024
+		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
+    -->
+    <title>tileTest Page</title>
+    <style type="text/css"></style>
+    <link href="flipper.css" rel="stylesheet" type="text/css" />
+    <!-- <input type="file" id="csv-input" href="gems.csv">
+    <script src="toys-csv.js"></script> -->
+    <script src="csv-gems.js"></script>
+</head>
+
+<body>
+    <div id="wrapper" >
+        <button type="button"  id = "playbox" class = "panel"  ></button>
+        <button type="button"  id = "playbox0" class = "panel"  >Players</button>
+        <button type="button"  id = "playbox1" class = "panel"  >0</button>
+        <button type="button"  id = "playbox2" class = "panel"  >0</button>
+        <div id="grid-container"></div>
+        <button onclick="tilereset()" id="reset-btn" class = "panel" >Reset</button>
+        <button onclick="changetheme()" id="changebtn" class = "panel" >Change Game</button>
+    </div>
+
+<script src = "memdev.js"></script>
+
+</body>
+</html>
