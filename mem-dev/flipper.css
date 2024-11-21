@@ -18,13 +18,9 @@ body{
 #wrapper{
     margin:auto;
     justify-content: space-evenly;
-    width: 100vw;
-    height: 100%;
+    
     background: powderblue;
-    border-width: 5px;
-    border-color: yellow;
-    border-radius: 10px;
-}
+    
 h1{
     text-align: center;
 }
