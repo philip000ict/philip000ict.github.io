@@ -29,8 +29,8 @@ h1{
     text-align: center;
 }
 img{
-    height:20%;
-    width:20%;
+    height:100%;
+    width:100%;
     border-radius: 10px;
 }
 #grid-container{
@@ -39,7 +39,7 @@ img{
     grid-template-columns: auto auto auto auto auto auto;
     gap: 10px;
     margin:auto;
-    width: 95%;
+    width: 100%;
     padding:10px;
     height: auto;
     background: salmon;
@@ -50,9 +50,9 @@ img{
 .grid-item{
     display: grid;
     gap: 10px;
-    height: 20vh;
-    width:20vh;
-    margin:auto;
+    height: 100px;
+    width:180px;
+    margin:5px;
     font-weight:bold;
     font-size:36px;
     text-align:center;
