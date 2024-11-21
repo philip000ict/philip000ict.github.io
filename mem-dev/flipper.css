@@ -19,6 +19,7 @@ body{
     margin:auto;
     justify-content: space-evenly;
     width: 100%;
+min-width: 1000px;
     height: 100%;
     background: powderblue;
     border-width: 5px;
