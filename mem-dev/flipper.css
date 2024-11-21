@@ -50,8 +50,8 @@ img{
 .grid-item{
     display: grid;
     gap: 10px;
-    height: 100%;
-    width:100%;
+    height: 20vh;
+    width:20vh;
     margin:auto;
     font-weight:bold;
     font-size:36px;
