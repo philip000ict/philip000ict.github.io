@@ -24,7 +24,7 @@ h1{
 }
 img{
     height: 100px;
-    width:180px;
+    width:160px;
     border-radius: 10px;
 }
 #grid-container{
@@ -33,7 +33,7 @@ img{
     grid-template-columns: auto auto auto auto auto;
     margin:auto;
     gap: 5px;
-    width: 95%;
+    width: 100%;
     padding:5px;
     height: auto;
     background: salmon;
@@ -42,7 +42,7 @@ img{
     display: grid;
     gap: 10px;
     height: 100px;
-    width:180px;
+    width:160px;
     margin:5px;
     font-weight:bold;
     font-size:36px;
