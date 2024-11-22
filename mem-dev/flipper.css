@@ -71,7 +71,7 @@ img{
     border-radius: 10px;
 }
 .button-panel{
-    display: flex;
+    display:block;
     justify-content: space-between;
     width: 100%;
 }
