@@ -15,9 +15,7 @@ body{
     text-align: center;
     height: 130px;
 }
-#wrapper{
-    display: flex;
-    
+#wrapper{    
     width: 100%;
     height: auto;
     background: powderblue;
