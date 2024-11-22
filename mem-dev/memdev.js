@@ -163,7 +163,7 @@ function changetheme(){
                     alert("it's a match");
                     score(player);
                 }else if(tile1.mtile != tile2.idtile){
-                    alert("That's NO how ya make porridge");
+                    alert("No match, try again");
                     document.getElementById(tile1.idtile).innerHTML = tile1.idtile;
                     document.getElementById(tile2.idtile).innerHTML = tile2.idtile;
                 }
