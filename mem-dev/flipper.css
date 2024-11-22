@@ -16,9 +16,7 @@ body{
     height: 130px;
 }
 #wrapper{
-    justify-content: space-evenly;
-
-    width:auto;
+    width:100%;
     height: auto;
     background: powderblue;
 }
