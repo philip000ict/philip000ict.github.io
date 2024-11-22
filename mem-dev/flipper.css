@@ -16,7 +16,7 @@ body{
     height: 130px;
 }
 #wrapper{
-    width:100%;
+    width:105%;
     height: auto;
     background: powderblue;
 }
@@ -32,15 +32,11 @@ img{
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto auto auto auto;
-    gap: 10px;
-    margin:10px;
-    width: 98%;
-    padding:10px;
+    gap: 5px;
+    width: 95%;
+    padding:5px;
     height: auto;
     background: salmon;
-    border-width: 5px;
-    border-color: yellow;
-    border-radius: 10px;
 }
 .grid-item{
     display: grid;
