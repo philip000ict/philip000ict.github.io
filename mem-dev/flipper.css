@@ -18,7 +18,7 @@ body{
 #wrapper{
     margin:auto;
     justify-content: space-evenly;
-    
+    height: 800px;
     background: powderblue;
     
 h1{
@@ -32,7 +32,7 @@ img{
 #grid-container{
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     gap: 10px;
     margin:auto;
     width: 100%;
