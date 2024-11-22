@@ -15,7 +15,7 @@ body{
     height: 130px;
 }
 #wrapper{    
-    width: 100%;
+    width: 105%;
     height: auto;
     background: powderblue;
 }
@@ -24,7 +24,7 @@ h1{
 }
 img{
     height: 100px;
-    width:160px;
+    width:170px;
     border-radius: 10px;
 }
 #grid-container{
@@ -42,7 +42,7 @@ img{
     display: grid;
     gap: 10px;
     height: 100px;
-    width:160px;
+    width:170px;
     margin:5px;
     font-weight:bold;
     font-size:36px;
