@@ -16,17 +16,16 @@ body{
     height: 130px;
 }
 #wrapper{
-    margin:auto;
     justify-content: space-evenly;
-    height: 800px;
+    height: auto;
     background: powderblue;
     
 h1{
     text-align: center;
 }
 img{
-    height:100%;
-    width:100%;
+    height: 100px;
+    width:180px;
     border-radius: 10px;
 }
 #grid-container{
@@ -66,7 +65,7 @@ img{
     width:20%;
     margin: 20px;
     font-weight:bold;
-    font-size:36px;
+    font-size:24px;
     text-align:center;
     align-items: center;
     color:white;
