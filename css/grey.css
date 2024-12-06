@@ -2,8 +2,8 @@ body {
     font-family: 'Muli', sans-serif;
     display: flex;
     align-items: center;
-    height: 100vh;
-	height: 100wh;
+    /* height: 100vh;
+	height: 100wh; */
     margin:0;
 }
 #header {
@@ -11,32 +11,73 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	min-width: 1000px;
+	min-width: 350px;
 	z-index: 2;
 	padding:0 0 20px 0;
     color: #fff;
     text-align: center;
-    height: 130px;
+    height: 110px;
 }
 #wrapper {
-	max-width: 1800px;
-	min-width: 1200px;
+	width: 100%;
+	/* max-width: 1800px; */
+	min-width: 350px;
     margin: auto;
-    padding: 170px 20px;
+    padding: 130px 0;
+}
+
+a {
+	text-align: center;
+	font-size: small;
 }
 
 .grid-container {
   display: grid;
-  height: 300px;
+  height: 230px;
   grid-template-columns: auto auto auto;
   padding: 10px;
   margin: 0;
 }
 .grid-item {
-  padding: 10px;
-  font-size: 18px;
+	width: 25vw;
+	min-width: 90px;
+  font-size: .7em;
   text-align: center;
+  margin: auto;
 }
+.img-3{
+	width: 20vw;
+	min-width: 90px;
+	height: 12vw;
+	min-height: 60px;
+}
+.grid-container-2 {
+	display: grid;
+	height: 230px;
+	grid-template-columns: auto auto;
+	margin: 0;
+  }
+  
+.grid-item-2 {
+	width: 100%;
+	min-width: 90px;
+	height: 180px;
+	overflow: hidden;
+  font-size: .9em;
+  text-align: left;
+  margin: auto;
+  float: left;
+}
+.img-2{
+
+	min-width: 90px;
+	max-width: 300px;
+	height: auto;
+	min-height: 60px;
+	float: right;
+	margin: 10px;
+}
+
 .grid-item-small{
 	padding: 10px;
 	width: 150px;
@@ -104,24 +145,28 @@ h1 {
 	background-color: black;
 	color: white;
 	text-align:center;
+	font-size: 1.6em;
 }
 h2	{
 	text-align:center;
-	background-color:darkblue;
+	background-image: linear-gradient(darkgrey 33%, rgb(33, 33, 66));
+	padding:3px;
 	color:white;
-	margin: 5px;
-	font-size:24px;
+	margin: 10px 0 5px;
+	font-size:1.2em;
 	}
 
 button {
-    width: auto;
-    height:40px;
+    width: 14%;
+    height:25%;
+	min-width: 63px;
 	border: 4px inset #7e7e7e;
-	padding: 3px 10px;
+	border-radius: 12px;
+	padding: 3px 8px;
 	color:#990033;
 	background-color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
+	font-size: .9em;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
