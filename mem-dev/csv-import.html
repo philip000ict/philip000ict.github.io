@@ -12,34 +12,19 @@
     <title>tileTest Page</title>
     <link href="flipper.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-        #wrapper{
-            height: auto;
-        }
-        #grid-container{
-            grid-template-columns: auto auto auto auto auto ;
-        }
-        h1 {
-            background-color: black;
-            color: white;
-            text-align:center;
-        }
-        button {
-            width: auto;
-            height:40px;
-            border: 4px inset #7e7e7e;
-            padding: 3px 10px;
-            color:#999999;
-            background-color: powderblue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            margin:10px;
-        }
-        a{
-            color:rgb(32, 32, 32);
-        }
+		#grid-container{
+			grid-template-columns: auto auto auto auto auto;
+			}
+		.grid-item{
+			height: 12vw;
+			width:18vw;
+			margin:0.5vw;
+			}
+		img{
+			height: 12vw;
+			width:18vw;
+			margin:0.5vw;
+			}
     </style>   
     <!-- <input type="file" id="csv-input" href="gems.csv">
     <script src="toys-csv.js"></script> -->
@@ -65,9 +50,9 @@
         <div id="grid-container"></div>
         <div class="button-panel" >
             <button class = "panel" ><a href="../index.html" style="color:white;">Home</a></button>
-            <button class = "panel" ><a href="memanimals.html" style="color:white;">Animals</a></button>
             <button class = "panel" ><a href="memgems.html" style="color:white;">Gems</a></button>
             <button class = "panel" ><a href="memtoys.html" style="color:white;">Toys</a></button>
+            <button class = "panel" ><a href="memanimals.html" style="color:white;">Animals</a></button>
         </div>
     </div>
 

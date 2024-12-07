@@ -1,5 +1,5 @@
-    let wide = 5;
-    let deep = 6;
+    let wide = 6;
+    let deep = 5;
     let griditem = "";
     let gridloco = "";
     let tileArray = [];
