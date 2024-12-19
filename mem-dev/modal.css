@@ -1,0 +1,78 @@
+
+body {font-family: Arial, Helvetica, sans-serif;
+     width: 100vw;
+     }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 0;
+    border-radius: 20px;
+  width: 75%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#modal-container{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+    margin:auto;
+    gap: 5px;
+    width: 100%;
+    padding:40px;
+    height: auto;
+    background: purple;
+    border-radius: 20px;
+      border: 5px solid yellow;
+}
+.modal-item{
+    display: grid;
+    height: 12vw;
+    width:18vw;
+    font-weight:bold;
+    font-size:3.5vw;
+    text-align:center;
+    align-items: center;
+    color:white;
+    background: darkblue;
+    border-width: 5px;
+    border-color: yellow;
+    border-radius: 10px;
+}
+img{
+    display: inline;
+    height: 12vw;
+    width:18vw;
+    border-radius: 10px;
+}
+.alert{
+        background-color: purple;
+        color:yellow;
+        }

@@ -1,13 +1,13 @@
 body{
     width: 100vw;
     height: auto;
-    background: white;
+    background: black;
 }
 #header {
 	background-image: linear-gradient(lightgrey 33%, grey);
 	position: relative;
 	top: 0;
-	width: 95%;
+	width: 100%;
 	min-width: 1000px;
 	z-index: 2;
     color: #fff;
@@ -16,7 +16,7 @@ body{
     height: 130px;
 }
 #wrapper{    
-    width: 99vw;
+    width: 100%;
     height: auto;
     background: powderblue;
 }
@@ -24,27 +24,25 @@ h1{
     text-align: center;
 }
 img{
-	display: grid;
-    height: 9vw;
-    width:15vw;
-    margin:0.2vw;
+    height: 12vw;
+    width:18vw;
     border-radius: 10px;
 }
 #grid-container{
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     margin:auto;
-    width: 98vw;
-    padding:0.5vw;
+    gap: 5px;
+    width: 100%;
+    padding:0px;
     height: auto;
     background: salmon;
 }
 .grid-item{
     display: grid;
-    height: 9vw;
-    width:15vw;
-    margin:0.2vw;
+    height: 12vw;
+    width:18vw;
     font-weight:bold;
     font-size:3.5vw;
     text-align:center;
@@ -57,10 +55,11 @@ img{
 }
 .panel{
     display: inline;
+    gap: 3vw;
     height: 5vw;
     min-height: 1.2em;
     width:18vw;
-    margin: 1vw;
+    margin: 3vw;
     font-weight:bold;
     font-size:2vw;
     text-align:center;
