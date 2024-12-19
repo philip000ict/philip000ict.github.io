@@ -1,7 +1,7 @@
 
 
     let wide = 2;
-    let deep = 4;
+    let deep = 5;
     let griditem = "";
     let gridloco = "";
     const tileArray = toysarray;
@@ -30,7 +30,7 @@
     console.log("init complete, toys in play = "+playArray);
     playPairs = gridInit(playArray)
 
-    // return 4 gametiles
+    // return 'deep' number of gametiles
     function init(tilesetparam){
         tileset = JSON.parse(JSON.stringify(tilesetparam));
         let ql = tileset.length/2
