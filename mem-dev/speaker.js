@@ -4,7 +4,7 @@
     let deep = 5;
     let griditem = "";
     let gridloco = "";
-    const tileArray = toysarray;
+    let tileArray = toysarray;
     let tilePairs = [];
     let playArray = [];
     let playPairs = [];
@@ -26,12 +26,17 @@
     let gameTiles=[];
 
     //gridInit();
-    playArray = init(tileArray);
-    console.log("init complete, toys in play = "+playArray);
-    playPairs = gridInit(playArray)
+    // playArray = init(tileArray);
+    // console.log("init complete, toys in play = "+playArray);
+    //playPairs = gridInit(init(tileArray))
+    gridInit(init(tileArray))
 
     // return 'deep' number of gametiles
     function init(tilesetparam){
+        tileset = [];
+        gameTiles = [];
+        tilePairs = [];
+        //console.log("36 tileset = "+tileset)
         tileset = JSON.parse(JSON.stringify(tilesetparam));
         let ql = tileset.length/2
         for(i=0; i<ql; i++){
@@ -44,20 +49,31 @@
                 tilePairs.splice(getTile,1);
             }
             // for(i=0; i< 4; i++){
-            // console.log("gameTiles @129 ["+i+"] " + gameTiles[i]);
+            console.log("49 gameTiles = " + gameTiles);
             // }
             return gameTiles;
-        }
+        }console.log("52 tileset = " + tileset);
 
     function startnow(){
         speak('welcome to the game of toys')
         startmodal.style.display = "none";
         }
 
+    function changeGame(arrayTopic){
+        // if(arrayTopic == "toys"){tileArray = JSON.parse(JSON.stringify(toysarray));}
+        // else if (arrayTopic == "gems"){tileArray = JSON.parse(JSON.stringify(gemsarray));}
+        // else if (arrayTopic == "animal"){tileArray = JSON.parse(JSON.stringify(animalarray));}
+        // console.log("arrayTopic = "+ arrayTopic)
+        tileArray = JSON.parse(JSON.stringify(arrayTopic));
+        console.log("tileArray = "+ tileArray)
+        gridInit(init(tileArray));
+    }
+
     function gridInit(tilemix){
         console.log(tilemix);    
         qarray = JSON.parse(JSON.stringify(tilemix));
         let ql = qarray.length
+        parentDiv.innerHTML = "";
         // let getface = Math.floor(Math.random() * ql);
         // let getmix = [];
         for(i=0; i< deep; i++){

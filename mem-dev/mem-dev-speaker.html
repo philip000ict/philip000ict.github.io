@@ -16,40 +16,30 @@
         #wrapper{
             height: auto;
             width: 80vw;
-<<<<<<< HEAD
             margin:5vw auto;
-=======
-		margin:5vw auto;
->>>>>>> 9169e7920cd0c0370c874a57617405c2788f5bc9
         }
         #grid-container{
             grid-template-columns: auto auto  ;
             width: 100%;
         }
         img{
-<<<<<<< HEAD
             height: 24vw;
-            width:36vw;
+            width: 36vw;
+            border-width: 3px;
+            border-color: yellow;
+            border-radius: 3vw;
           }
-          .grid-item{
+        .grid-item{
             margin:1vw;
             display: grid;
             height: 24vw;
             width:36vw;
             font-size:6vw;
+            border-width: 3px;
+            border-color: yellow;
+            border-radius: 3vw;
             }
-=======
-			height: 24vw;
-			width:36vw;
-		}
-	.grid-item{
-		margin:1vw;
-		display: grid;
-		height: 24vw;
-		width:36vw;
-		font-size:6vw;
-		}
->>>>>>> 9169e7920cd0c0370c874a57617405c2788f5bc9
+
         #startmodal{
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -67,7 +57,10 @@
             color: white;
             text-align:center;
         }
-
+        .panel{
+          height: 3vh;
+          font-size:1.2vh;
+        }
 
     </style>   
     <script src="csv-import.js"></script> 
@@ -76,41 +69,45 @@
 </head>
 
 <body>
-    <div id="wrapper" >
-        <div id="grid-container"></div>
+<div id="wrapper" >
+    <div id="grid-container"></div>
 
 
   <!--   The opening Modal    </div>-->
-<div id="startmodal" class="">
-    <div class="modal-content close">
-        <h1>Welcome to the Game of Gems</h1>
-    <button onclick="startnow()"> Start now </button>
-</div> </div> 
+  <div id="startmodal" class="">
+      <div class="modal-content close">
+          <h1>Welcome to the Game of Gems</h1>
+      <button id="startnow"> Start now </button>
+  </div> </div> 
         
 <!-- The winning Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content close">
-      <div id="modal-container">
-          <a  class="modal-item alert"> WINNING COMBO</a>
-            <img src="dolphinsm.png">
-          <a class="modal-item">Dolphin</a>
-          <a class="modal-item alert">Score +1</a>
+  <div id="myModal" class="modal">
+    <div class="modal-content close">
+        <div id="modal-container">
+            <a  class="modal-item alert"> WINNING COMBO</a>
+              <img src="dolphinsm.png">
+            <a class="modal-item">Dolphin</a>
+            <a class="modal-item alert">Score +1</a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- The losing Modal -->
-<div id="noModal" class="modal">
-  <div class="modal-content clap">
-      <div id="modal-container">
-          <a  class="modal-item alert"> Not a Match!</a>
-            <img id="tile-face" src="dolphinsm.png">
-          <a  id="tile-text" class="modal-item">Trout</a>
-          <a class="modal-item alert">Score +0</a>
+  <!-- The losing Modal -->
+  <div id="noModal" class="modal">
+    <div class="modal-content clap">
+        <div id="modal-container">
+            <a  class="modal-item alert"> Not a Match!</a>
+              <img id="tile-face" src="dolphinsm.png">
+            <a  id="tile-text" class="modal-item">Trout</a>
+            <a class="modal-item alert">Score +0</a>
+      </div>
     </div>
+
   </div>
-</div>
-      </div>  
+  <button id="changeTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
+  <button id="changeTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
+  <button id="changeTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
+</div>  
       <script src="speaker.js"></script> 
 </body>
 </html>

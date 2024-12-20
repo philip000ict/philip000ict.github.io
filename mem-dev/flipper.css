@@ -49,9 +49,9 @@ img{
     align-items: center;
     color:white;
     background: darkblue;
-    border-width: 5px;
+    border-width: 3px;
     border-color: yellow;
-    border-radius: 10px;
+    border-radius: 3vw;
 }
 .panel{
     display: inline;
