@@ -3,10 +3,12 @@
     <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--
 		Designed by Philip Barnes
 		https://philip000ict.github.io/
-		30/10/2024
+		30/11/2024
 		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
     -->
     <title>tileTest Page</title>
@@ -58,8 +60,15 @@
             text-align:center;
         }
         .panel{
+          width: 20%;
           height: 3vh;
           font-size:1.2vh;
+        }
+        .round{
+          width: 5vh;
+          height: 5vh;
+          font-size:2vh;
+          border-radius: 2.5vh;
         }
 
     </style>   
@@ -104,9 +113,10 @@
     </div>
 
   </div>
-  <button id="changeTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
-  <button id="changeTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
-  <button id="changeTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
+  <button id="toysTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
+  <button id="animalTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
+  <button id="gemsTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
+  <button class="panel round"><a href="../index.html"><i class="fa fa-home"></i></a></button>
 </div>  
       <script src="speaker.js"></script> 
 </body>

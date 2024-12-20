@@ -55,11 +55,10 @@ img{
 }
 .panel{
     display: inline;
-    gap: 3vw;
     height: 5vw;
     min-height: 1.2em;
     width:18vw;
-    margin: 3vw;
+    margin: 2vw;
     font-weight:bold;
     font-size:2vw;
     text-align:center;
