@@ -16,38 +16,32 @@
      <link href="modal.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         #wrapper{
-            height: 98vh;
-            width: 60vh;
-            min-width: 400px;
+
+            max-width: 400px;
+            min-width: 360px;
             margin: auto;
         }
         #grid-container{
             grid-template-columns: auto auto  ;
-            min-width: 400px;
+            min-width: 360px;
             max-width: 60vh;
-            height: 92%;
             min-height: 600px;
         }
         img{
-            height: 15vh;
-            width: 25vh;
-            min-height: 100px;
+            height: 100px;
+            width: auto;
+            min-height: 90px;
             min-width: 170px;
-            border-width: 3px;
-            border-color: yellow;
-            border-radius: 3vw;
+            max-width: 200px;
           }
         .grid-item{
-            margin:1vw;
+            margin:5px;
             display: grid;
-            height: 15vh;
-            min-height: 100px;
+            height: 100px;
+            min-height: 90px;
             min-width: 170px;
-            width:25vh;
+            max-width: 200px;
             font-size:40px;
-            border-width: 3px;
-            border-color: yellow;
-            border-radius: 3vw;
             }
 
         #startmodal{
@@ -68,15 +62,19 @@
             text-align:center;
         }
         .panel{
-          width: 100px;
+          width: 80px;
           height: 30px;
-          font-size:20px;
+          font-size:18px;
+          margin: 5px ;
         }
         .round{
-          width: 50px;
-          height: 50px;
-          font-size:30px;
-          border-radius: 250px;
+          width: 40px;
+          height: 40px;
+          font-size:20px;
+          border-radius: 20px;
+        }
+        .button-panel{
+          min-width: 360px;
         }
 
     </style>   
@@ -102,7 +100,7 @@
     <div class="modal-content close">
         <div id="modal-container">
             <a  class="modal-item alert"> WINNING COMBO</a>
-              <img src="dolphinsm.png">
+              <img src="">
             <a class="modal-item">Dolphin</a>
             <a class="modal-item alert">Score +1</a>
       </div>
@@ -114,17 +112,19 @@
     <div class="modal-content clap">
         <div id="modal-container">
             <a  class="modal-item alert"> Not a Match!</a>
-              <img id="tile-face" src="dolphinsm.png">
+              <img id="tile-face" src="">
             <a  id="tile-text" class="modal-item">Trout</a>
             <a class="modal-item alert">Score +0</a>
       </div>
     </div>
 
   </div>
-  <button id="toysTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
-  <button id="animalTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
-  <button id="gemsTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
-  <button class="panel round"><a href="../index.html"><i class="fa fa-home"></i></a></button>
+  <div class = "button-panel">
+    <button class="panel round"><a href="../index.html"><i class="fa fa-home"></i></a></button>
+    <button id="toysTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
+    <button id="animalTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
+    <button id="gemsTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
+  </div>
 </div>  
       <script src="speaker.js"></script> 
 </body>

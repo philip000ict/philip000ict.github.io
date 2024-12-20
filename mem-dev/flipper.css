@@ -72,7 +72,7 @@ img{
 .button-panel{
     display:block;
     justify-content: space-between;
-    width: 100%;
+    margin:auto;
 }
 a{
     color:aliceblue;
