@@ -51,7 +51,7 @@ img{
     background: darkblue;
     border-width: 3px;
     border-color: yellow;
-    border-radius: 3vw;
+    border-radius: 10px;
 }
 .panel{
     display: inline;
