@@ -2,6 +2,7 @@ body{
     width: 100vw;
     height: auto;
     background: black;
+    margin: -3px 0 0 -3px;
 }
 #header {
 	background-image: linear-gradient(lightgrey 33%, grey);
@@ -16,8 +17,8 @@ body{
     height: 130px;
 }
 #wrapper{    
-    width: 100%;
-    height: auto;
+    width: 100vw;
+    height: 100hh;
     background: powderblue;
 }
 h1{

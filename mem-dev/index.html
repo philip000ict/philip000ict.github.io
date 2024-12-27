@@ -1,0 +1,131 @@
+<html>
+<head>
+    <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--
+		Designed by Philip Barnes
+		https://philip000ict.github.io/
+		30/10/2024
+		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
+    -->
+    <title>tileTest Page</title>
+    <link href="flipper.css" rel="stylesheet" type="text/css" />
+     <link href="modal.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+
+        #grid-container{
+            grid-template-columns: auto auto auto auto auto ;
+        }
+        h1 {
+            background-color: black;
+            color: white;
+            text-align:center;
+        }
+        button {
+            width: auto;
+            height:40px;
+            border: 4px inset #7e7e7e;
+            padding: 3px 10px;
+            color:#999999;
+            background-color: powderblue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            margin:10px;
+        }
+        .round{
+          width: 5vw;
+          height: 5vw;
+          font-size:3vw;
+          border-radius: 2.5vw;
+          padding:0;
+        }
+        a{
+            color:rgb(32, 32, 32);
+        }
+        #startmodal{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(127, 255, 212, 0.6);
+        }
+    </style>   
+    <script src="csv-import.js"></script> 
+    
+</head>
+
+<body>
+    <div id="wrapper" >
+        <div class="button-panel">
+            <button class="panel round"><a href="../index.html"><i class="fa fa-home"  style="color:white;"></i></a></button>
+            <button type="button"  id = "playbox" class = "panel"  >Home</button>
+            <button type="button"  id = "playbox0" class = "panel"  >Players</button>
+            <button type="button"  id = "playbox1" class = "panel"  >0</button>
+            <button type="button"  id = "playbox2" class = "panel"  >0</button>
+        </div>
+        <div id="grid-container"></div>
+        <!-- <div class="button-panel" >
+            
+            <button class = "panel" ><a href="memanimals.html" style="color:white;">Animals</a></button>
+            <button class = "panel" ><a href="memgems.html" style="color:white;">Gems</a></button>
+            <button class = "panel" ><a href="memtoys.html" style="color:white;">Toys</a></button>
+        </div> -->
+    </div>
+
+    <!-- The opening Modal -->
+<div id="startModal" class="modal">
+        <div id="modal-container" class="modal-content clip">
+
+            <a  class="modal-title alert">Memory Game; Match tiles to win</a>
+
+            <a id="topicSelectAnimal" class="modal-item span1 img"><img src = "img/animal/dolphinsm.png"></a>
+            <a id="topicSelectGems"  class="modal-item span1 img"><img src = "img/ruby.png"></a>
+            <a id="topicSelectToys"  class="modal-item span1 img"><img src = "img/play-toy/bearsm.png"></a>
+            <a id="topicSelectCells"  class="modal-item span1 img"><img src = "img/animal/owlsm.png"></a>
+
+
+            <form class="modal-item span1-2 alert" style="width:100%;" >
+                Select Game:
+                <select id="topicSelect" onchange="topicFunction()" >
+                  <!--   <option >Select Topic</option> -->
+                  <option value=0 selected>Gems</option>
+                  <option value=1>Toys</option>
+                  <option value=2>Animals</option>
+                  <!-- <option value="sciencearray">Science</option> -->
+                </select>
+            </form>
+            
+            <button class = "panel span3-2" style="width:90%;" ><a id="startClick"  style="color:white;" class=""> CLICK TO PLAY</a></button>
+    </div>
+  </div>
+<!-- The winning Modal -->
+<div id="myModal" class="modal">
+      <div id="modal-container" class="modal-content close">
+          <a  class="modal-item alert"> WINNING COMBO</a>
+          <a id="win-face" class="modal-item"></a>
+          <a  id="win-text" class="modal-item"></a>
+          <a class="modal-item alert">Score +1</a>
+  </div>
+</div>
+
+<!-- The losing Modal -->
+<div id="noModal" class="modal">
+      <div id="modal-container" class="modal-content clap">
+          <a  class="modal-item alert"> Not a Match!</a>
+          <a id="lose-face1" class="modal-item"></a> 
+          <a  id="lose-text1" class="modal-item"></a>
+          <a class="modal-item alert "></a>
+          
+          <a  class="modal-item alert"></a>
+          <a id="lose-face2" class="modal-item"></a> 
+          <a  id="lose-text2" class="modal-item"></a>
+          <a class="modal-item alert">Score +0</a>
+  </div>
+</div>
+<script src="modal-mem.js"></script>    
+</body>
+</html>

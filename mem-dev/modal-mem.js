@@ -1,108 +1,3 @@
-<html>
-<head>
-    <link href="img/favicon.ico" type="image/x-icon" rel="icon" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Add icon library -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--
-		Designed by Philip Barnes
-		https://philip000ict.github.io/
-		30/10/2024
-		<link id="theme" href="css/game.css" rel="stylesheet" type="text/css" media="screen" />
-    -->
-    <title>tileTest Page</title>
-    <link href="flipper.css" rel="stylesheet" type="text/css" />
-     <link href="modal.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-        #wrapper{
-            height: auto;
-        }
-        #grid-container{
-            grid-template-columns: auto auto auto auto auto ;
-        }
-        h1 {
-            background-color: black;
-            color: white;
-            text-align:center;
-        }
-        button {
-            width: auto;
-            height:40px;
-            border: 4px inset #7e7e7e;
-            padding: 3px 10px;
-            color:#999999;
-            background-color: powderblue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            margin:10px;
-        }
-        .round{
-          width: 40px;
-          height: 40px;
-          font-size:20px;
-          border-radius: 20px;
-          padding:0;
-        }
-        a{
-            color:rgb(32, 32, 32);
-        }
-    </style>   
-    <script src="csv-import.js"></script> 
-    
-</head>
-
-<body>
-    <div id="wrapper" >
-        <div class="button-panel">
-            <button type="button"  id = "playbox" class = "panel"  >Home</button>
-            <button type="button"  id = "playbox0" class = "panel"  >Players</button>
-            <button type="button"  id = "playbox1" class = "panel"  >0</button>
-            <button type="button"  id = "playbox2" class = "panel"  >0</button>
-        </div>
-        <div id="grid-container"></div>
-        <div class="button-panel" >
-            <button class="panel round"><a href="../index.html"><i class="fa fa-home"  style="color:white;"></i></a></button>
-            <button class = "panel" ><a href="memanimals.html" style="color:white;">Animals</a></button>
-            <button class = "panel" ><a href="memgems.html" style="color:white;">Gems</a></button>
-            <button class = "panel" ><a href="memtoys.html" style="color:white;">Toys</a></button>
-        </div>
-    </div>
-
-<!-- The winning Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content close">
-      <div id="modal-container">
-          <a  class="modal-item alert"> WINNING COMBO</a>
-          <a id="win-face" class="modal-item"></a>
-          <a  id="win-text" class="modal-item"></a>
-          <a class="modal-item alert">Score +1</a>
-    </div>
-  </div>
-</div>
-
-<!-- The losing Modal -->
-<div id="noModal" class="modal">
-  <div class="modal-content clap">
-      <div id="modal-container">
-          <a  class="modal-item alert"> Not a Match!</a>
-          <a id="lose-face1" class="modal-item"></a> 
-          <a  id="lose-text1" class="modal-item"></a>
-          <a class="modal-item alert "></a>
-          
-          <a  class="modal-item alert"></a>
-          <a id="lose-face2" class="modal-item"></a> 
-          <a  id="lose-text2" class="modal-item"></a>
-          <a class="modal-item alert">Score +0</a>
-    </div>
-  </div>
-</div>
-    
-<script>
-
     let wide = 5;
     let deep = 4;
     let griditem = "";
@@ -113,10 +8,17 @@
     let player = 1;
     let players = [0,0];
     let parentDiv = document.getElementById('grid-container');
+    var startmodal = document.getElementById("startModal");
     var modal = document.getElementById("myModal");
     var nomodal = document.getElementById("noModal");
-    var span = document.getElementsByClassName("close")[0];
-    var spun = document.getElementsByClassName("clap")[0];
+    var closer = document.getElementsByClassName("close")[0];
+    var clapper = document.getElementsByClassName("clap")[0];
+    var clipper = document.getElementById("startClick");
+    var options = document.getElementById("topicSelect");
+    // var optionsAnimal = document.getElementById("topicSelectAnimal");
+    // var optionsGems = document.getElementById("topicSelectGems");
+    // var optionsToys = document.getElementById("topicSelectToys");
+    // var optionsCells = document.getElementById("topicSelectCells");
 
     let tile1="";
     let tile2="";
@@ -124,7 +26,9 @@
     let turn2="";
     let choice=0;
 
+    let topicSelect = 0;
     let gameTiles=[];
+  //  let topicArray=[];
 
     class Tile {
             constructor(idtile, mtile, face, match){
@@ -141,10 +45,59 @@
             getans(){return this.match};
             getid(){return this.idtile};
         }
-    //gridInit();
-    init(toysarray);
-    console.log("init complete,"+toysarray+" tiles in play");
 
+
+    // When the user clicks on <span> (x), close the modal
+    closer.onclick = function() {
+    modal.style.display = "none";
+    }
+    clapper.onclick = function() {
+    nomodal.style.display = "none";
+    }
+    clipper.onclick = function() {
+ 
+    startmodal.style.display = "none";
+    }
+    options.onselection = function(){
+        document.getElementById("playbox").innerText= topicNames[document.getElementById("topicSelect").value];
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        nomodal.style.display = "none"; 
+        startmodal.style.display = "none";
+    }
+    }
+    function topicFunction() {
+                topicValue=document.getElementById("topicSelect").value;
+                //console.log(topicSelect);              
+                init(topicArray[topicValue]);
+                document.getElementById("playbox").innerText= topicNames[topicValue];
+              }
+    //gridInit();
+    gridInit();         //initialise gameplay grid
+    startmodal.style.display = "block";
+    topicFunction();
+    console.log("init complete,"+ topicArray +" tiles in play");
+        // When the user clicks on modal image, open game set
+
+        // optionsAnimal.onclick = function() {
+        //     init(topicArray[2]);
+        //     document.getElementById("playbox").innerText= topicNames[2];    
+        // }
+        // optionsGems.onclick = function() {
+        //     init(topicArray[0]);
+        //     document.getElementById("playbox").innerText= topicNames[0];
+        // }
+        // optionsToys.onclick = function() {
+        //     init(topicArray[1]);
+        //     document.getElementById("playbox").innerText= topicNames[1];
+        // }
+        // optionsCells.onclick = function() {
+        //     init(topicArray[3]);
+        //     document.getElementById("playbox").innerText= topicNames[3];
+        // }
 
     const tiles = document.querySelectorAll('.tile')
 		tiles.forEach((tile) => {
@@ -152,7 +105,7 @@
 		});
 
     function init(tileset){
-        gridInit();         //initialise gameplay grid
+        //gridInit();         //initialise gameplay grid
         gameTopicInit(tileset);    //load game topic into array from external file
         arrayInit();        //randomise game tiles
         playersInit()
@@ -304,22 +257,7 @@ function changetheme(){
         }
     }}
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-    spun.onclick = function() {
-  nomodal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    nomodal.style.display = "none"; 
-    
-  }
-}
 
 function score(player){
     play = parseInt(document.getElementById("playbox"+player).innerHTML);
@@ -341,6 +279,3 @@ function score(player){
         tileArray=[];
         init(toys);
         choice = 0;}//catch(err){console.log(err);}
-    </script>
-</body>
-</html>

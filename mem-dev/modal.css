@@ -12,15 +12,42 @@
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+#modal-container{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+    margin:15vh auto;
+    gap: 5px;
+    width: 90%;
+    padding:40px 10px;
+    height: 55%; 
+    background: purple;
+    border-radius: 20px;
+      border: 5px solid yellow;
+}
+.modal-title{
+
+  grid-column: 1 / span 4;
+  text-align: center;
+}
+.span1-2{
+
+  grid-column: 1 / span 2;
+}
+.span3-2{
+
+  grid-column: 3 / span 2;
+}
 
 /* Modal Content/Box */
-.modal-content {
+/* .modal-content {
   background-color: #fefefe;
-  margin:  auto; /* 15% from the top and centered */
+  margin: 15vh  auto; /* 15% from the top and centered */
   padding: 0;
     border-radius: 20px;
   width: 75%; /* Could be more or less, depending on screen size */
-}
+  height: 60%; 
+} */
 
 /* The Close Button */
 .close {
@@ -36,21 +63,8 @@
   text-decoration: none;
   cursor: pointer;
 }
-#modal-container{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: auto auto auto auto;
-    margin:10vh auto;
-    gap: 5px;
-    width: 100%;
-    padding:40px 10px;
-    height: auto;
-    background: purple;
-    border-radius: 20px;
-      border: 5px solid yellow;
-}
+
 .modal-item{
-    display: grid;
     height: 12vw;
     width:18vw;
     font-weight:bold;
@@ -72,4 +86,16 @@ img{
 .alert{
         background-color: purple;
         color:yellow;
+        font-size:2.5vw;
+
+        }
+select{
+  background: powderblue;
+  color:brown;
+  font-size:2vw;
+  border-width: 2px;
+  border-color: yellow;
+  border-radius: 10px;
+  padding: 5px;
+  width:80%;
         }
