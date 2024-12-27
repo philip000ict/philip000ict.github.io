@@ -69,19 +69,18 @@
         startmodal.style.display = "none";
     }
     }
-    function topicFunction() {
-                topicValue=document.getElementById("topicSelect").value;
-                //console.log(topicSelect);              
-                init(topicArray[topicValue]);
-                document.getElementById("playbox").innerText= topicNames[topicValue];
-              }
+
     //gridInit();
     gridInit();         //initialise gameplay grid
     startmodal.style.display = "block";
     topicFunction();
-    console.log("init complete,"+ topicArray +" tiles in play");
-        // When the user clicks on modal image, open game set
 
+    function topicFunction() {
+                topicValue=document.getElementById("topicSelect").value;
+                console.log("topicArray[topicValue] = "+topicArray[topicValue]);              
+                init(topicArray[topicValue]);
+                document.getElementById("playbox").innerText= topicNames[topicValue];
+              }
         // optionsAnimal.onclick = function() {
         //     init(topicArray[2]);
         //     document.getElementById("playbox").innerText= topicNames[2];    
