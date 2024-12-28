@@ -4,7 +4,7 @@
     let deep = 5;
     let griditem = "";
     let gridloco = "";
-    let tileArray = toysarray;
+    let tileArray = topicArray[1];
     let tilePairs = [];
     let playArray = [];
     let playPairs = [];
