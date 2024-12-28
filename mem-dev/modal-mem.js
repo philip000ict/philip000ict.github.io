@@ -26,7 +26,7 @@
     let turn2="";
     let choice=0;
 
-    let topicSelect = 0;
+    let topicSelect = 3;
     let gameTiles=[];
   //  let topicArray=[];
 
@@ -73,7 +73,7 @@
     //gridInit();
     gridInit();         //initialise gameplay grid
     startmodal.style.display = "block";
-    topicFunction();
+    //topicFunction();
 
     function topicFunction() {
                 topicValue=document.getElementById("topicSelect").value;
