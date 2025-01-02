@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 7 English Test</title>
+  <link rel="stylesheet" href="quiz.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .category {
+      margin-bottom: 30px;
+    }
+    .question {
+      font-weight: bold;
+    }
+    .answers {
+      margin-left: 20px;
+    }
+    .explanation {
+      font-style: italic;
+      color: gray;
+    }
+    #qface{
+      margin-top: 100px;
+      height: 200px;
+      line-height: 50px;
+    }
+    .tile{
+      line-height: 100px;
+    }
+    #Qface{
+      margin-top: 100px;
+      height: 200px;
+      line-height: 50px;
+    }
+    #eface{
+      display: "none";
+      line-height: 60px;
+      height: auto;
+      padding: 50px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grade 7 English Test</h1>
+
+  <div id="quiz-container"></div>
+
+<!-- The question Modal -->
+<div id="myModal" class="modal">
+    <div id="Qface" class="modal-item tile"></div>
+    <div id="Aface" class="modal-item tile"></div>
+    <div id="Bface" class="modal-item tile"></div>
+    <div id="Cface" class="modal-item tile"></div>
+    <div id="Dface" class="modal-item tile"></div>
+</div>
+
+<!-- The answer Modal -->
+<div id="answerModal" class="modal">
+    <div id="qface" class="modal-item tile"></div>
+    <div id="aface" class="modal-item tile"></div>
+    <div id="eface" class="modal-item tile"></div>
+</div>
+
+  <script src="g7-english-quiz.json"></script>
+  <script>
+
+    // The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle.
+    function shuffle(array) {
+        let currentIndex = array.length;
+          // While there remain elements to shuffle...
+          while (currentIndex != 0) {
+            // Pick a remaining element...
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+              array[randomIndex], array[currentIndex]];
+          }
+          return array;
+      }
+    
+    // check answer for correctness
+    function checkAnswer(){
+      //hide the question modal
+      document.getElementById("myModal").style.display="none";
+      //display the answer modal
+      const aBlock = document.getElementById("answerModal");
+      aBlock.style.display="block";
+      aBlock.addEventListener("click", () => {aBlock.style.display="none"});
+      //change answer background depending if answer is correct
+      const atile = aBlock.querySelector("#aface");
+      atile.innerText = this.innerText;
+      if(!this.value){
+        atile.style.backgroundColor = "red";
+      } else {
+        atile.style.backgroundColor = "green";
+      }
+      console.log(this)
+      aBlock.querySelector("#qface").innerText = this.question;
+      
+      aBlock.querySelector("#eface").innerText = this.data.innerText;
+
+    }
+
+    // Function to generate and display quiz content 
+    function displayQuiz(quiz) {
+      const quizContainer = document.getElementById('quiz-container');
+      const qarray = ["A","B","C","D","E","F","G","H"]
+      let i =0;
+
+      quiz.categories.forEach((category, cIndex) => {
+        // Create category container and index
+        const categoryDiv = document.createElement('div');
+        categoryDiv.classList.add('category');
+        categoryDiv.id=cIndex;
+
+        //add category name to title
+        const categoryTitle = document.createElement('div');
+        categoryTitle.textContent = category.category_name;
+        categoryTitle.classList.add('title');
+        categoryDiv.appendChild(categoryTitle);
+
+        // Loop through questions in each category
+        category.questions.forEach((question, qIndex) => {
+          const questionDiv = document.createElement('div');
+          questionDiv.classList.add('question');
+          //give each question an id
+          questionDiv.id=cIndex+'.'+qIndex;
+
+          // Create question
+          const questionTitle = document.createElement('p');
+          questionTitle.textContent = `${qIndex + 1}. ${question.question}`;
+          questionDiv.appendChild(questionTitle);
+
+          // Create answers
+          const answersDiv = document.createElement('div');
+          answersDiv.classList.add('answerBlock');
+          // iterate through the supplied answers
+          question.answers.forEach((answer, aIndex) => {
+            const answerLabel = document.createElement('div');
+            const aid = `${cIndex}.${qIndex}.${aIndex}`;
+            answerLabel.id = aid;
+            answerLabel.classList.add('answer');
+            answerLabel.value = answer.correct;
+            answerLabel.innerText = answer.text;
+            //add answer to the answer bank
+            answersDiv.appendChild(answerLabel);
+          });
+          //add explanation of correct answer to answer div
+          const explanationDiv = document.createElement('div');
+          explanationDiv.classList.add('explanation');
+          explanationDiv.textContent = question.explanation;
+          answersDiv.appendChild(explanationDiv);
+          // Add answer div to question div
+          questionDiv.appendChild(answersDiv);
+          // Add answer div to question div
+          questionDiv.appendChild(explanationDiv);
+
+          // Create selection Tile
+          const tileDiv = document.createElement('div');
+          tileDiv.classList.add('tile')
+          tileDiv.id='tile'+cIndex+'.'+qIndex;
+          tileDiv.textContent = (qIndex+2)*50;
+          
+          // Add onclick function to tile to display the question modal
+          tileDiv.onclick= function() {
+              this.style.display="none";
+              const qid= this.id.slice(4);
+              console.log(qid)
+              console.log(document.getElementById(qid));
+              //display the question modal
+                document.getElementById("myModal").style.display = "block";
+                document.getElementById("Qface").innerHTML = document.getElementById(qid).innerHTML;
+
+                aBank = qarray.slice(0,4);
+                console.log(aBank)
+                
+                //shuffle here
+                aBank = shuffle(aBank)
+                console.log(aBank)
+                
+                  for (let i = 0; i < aBank.length; i++) {
+                    const aTile = document.getElementById(aBank[i]+"face");
+                    // aTile.
+                    aTile.innerText = document.getElementById(qid+'.'+i).innerText;
+                    aTile.value = document.getElementById(qid+'.'+i).value;
+                    aTile.data = document.getElementById(qid).lastChild;
+                    console.log( "document.getElementById(qid).firstChild = " + document.getElementById(qid).firstChild.innerText);
+                    aTile.question = document.getElementById(qid).firstChild.innerText;
+                    aTile.addEventListener("click", checkAnswer)
+                    console.log(aTile.innerText);
+                    console.log(aTile.value);
+                    console.log(aTile.data);
+                    } 
+            }
+            
+            // Append question to tile
+            tileDiv.appendChild(questionDiv);
+
+            // Append tile to category
+            categoryDiv.appendChild(tileDiv);
+
+
+        });
+
+        // Append category to quiz container
+        quizContainer.appendChild(categoryDiv);
+
+        // for (const child of quizContainer.children) {
+        //     console.log(JSON.stringify(child.getElementsByTagName("DIV")));
+        //     }
+        
+      });
+      
+    }
+
+    // Call function to display quiz
+    displayQuiz(quizData.quiz);
+
+  </script>
+  
+</body>
+</html>

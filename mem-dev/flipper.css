@@ -17,17 +17,23 @@ body{
     height: 130px;
 }
 #wrapper{    
-    width: 100vw;
-    height: 100hh;
+    min-width: 500px;
+
     background: powderblue;
-}
+    background-image: linear-gradient( rgb(125, 125, 252),darkblue);
+    padding:0 20px 20px 0;
+}m
 h1{
     text-align: center;
 }
-img{
-    height: 12vw;
-    width:18vw;
+.img-item{
+    height: 11vw;
+    width:16vw;
     border-radius: 10px;
+    /* border: .5vw solid darkblue;
+    border-radius: 10px;
+    border-style: inset; */
+    margin: -0.5vw 0 0 -0.5vw;
 }
 #grid-container{
     display: grid;
@@ -38,28 +44,33 @@ img{
     width: 100%;
     padding:0px;
     height: auto;
-    background: salmon;
+    /* background: salmon; */
 }
 .grid-item{
     display: grid;
-    height: 12vw;
-    width:18vw;
+    height: 10vw;
+    min-height: 50px;
+    width:15vw;
+    min-width: 70px;
+    margin: 1vw auto;
     font-weight:bold;
     font-size:3.5vw;
     text-align:center;
     align-items: center;
     color:white;
     background: darkblue;
-    border-width: 3px;
-    border-color: yellow;
+    background-image: radial-gradient(blue, navy);
+    border: .5vw solid darkblue;
     border-radius: 10px;
+    border-style: outset;
+    box-shadow: 5px 5px 15px yellow
 }
 .panel{
     display: inline;
     height: 5vw;
     min-height: 1.2em;
-    width:18vw;
-    margin: 2vw;
+    width:16vw;
+    margin: 1vw;
     font-weight:bold;
     font-size:2vw;
     text-align:center;

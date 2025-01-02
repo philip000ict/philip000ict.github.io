@@ -16,11 +16,11 @@
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: auto auto auto auto;
-    margin:15vh auto;
+    margin:8.5vw auto;
     gap: 5px;
-    width: 90%;
+    width: 80%;
     padding:40px 10px;
-    height: 55%; 
+    /* height: 55%;  */
     background: purple;
     border-radius: 20px;
       border: 5px solid yellow;
@@ -58,7 +58,7 @@
     height: 12vw;
     width:18vw;
     font-weight:bold;
-    font-size:3.5vw;
+    font-size:3vw;
     text-align:center;
     align-items: center;
     color:white;

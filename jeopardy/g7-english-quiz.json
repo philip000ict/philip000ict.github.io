@@ -1,0 +1,267 @@
+const quizData = {
+    "quiz": {
+      "categories": [
+        {
+          "category_name": "Grammar",
+          "questions": [
+            {
+              "question": "Which sentence is correct?",
+              "answers": [
+                { "text": "He don't like pizza.", "correct": false },
+                { "text": "He doesn't like pizza.", "correct": true },
+                { "text": "He don't likes pizza.", "correct": false },
+                { "text": "He not like pizza.", "correct": false }
+              ],
+              "explanation": "The correct sentence is 'He doesn't like pizza.' because the verb 'does' is followed by the base form of the verb 'like'."
+            },
+            {
+              "question": "What is the correct form of the verb in this sentence? 'She ____ to school every day.'",
+              "answers": [
+                { "text": "goes", "correct": true },
+                { "text": "going", "correct": false },
+                { "text": "go", "correct": false },
+                { "text": "goed", "correct": false }
+              ],
+              "explanation": "'Goes' is the correct form of the verb in the present tense, third-person singular."
+            },
+            {
+              "question": "Choose the correctly punctuated sentence.",
+              "answers": [
+                { "text": "I can't wait for the summer, can you?", "correct": false },
+                { "text": "I can't wait for the summer can you?", "correct": false },
+                { "text": "I can't wait for the summer, can you.", "correct": false },
+                { "text": "I can't wait for the summer; can you?", "correct": true }
+              ],
+              "explanation": "The sentence uses a semicolon to join two related independent clauses, which is correct punctuation."
+            },
+            {
+              "question": "Which sentence is written in the past tense?",
+              "answers": [
+                { "text": "She will finish her homework.", "correct": false },
+                { "text": "She finishes her homework.", "correct": false },
+                { "text": "She finished her homework.", "correct": true },
+                { "text": "She is finishing her homework.", "correct": false }
+              ],
+              "explanation": "'She finished her homework.' is in the past tense, indicating an action completed in the past."
+            },
+            {
+              "question": "Which word is a noun?",
+              "answers": [
+                { "text": "run", "correct": false },
+                { "text": "happy", "correct": false },
+                { "text": "quickly", "correct": false },
+                { "text": "book", "correct": true }
+              ],
+              "explanation": "'Book' is a noun, which is a person, place, thing, or idea."
+            },
+            {
+              "question": "Choose the sentence with correct subject-verb agreement.",
+              "answers": [
+                { "text": "The dogs is barking.", "correct": false },
+                { "text": "The dog are barking.", "correct": false },
+                { "text": "The dog barks.", "correct": true },
+                { "text": "The dogs bark.", "correct": true }
+              ],
+              "explanation": "Both 'The dog barks' and 'The dogs bark' are correct. The subject and verb must agree in number."
+            }
+          ]
+        },
+        {
+          "category_name": "Vocabulary",
+          "questions": [
+            {
+              "question": "What is the synonym of 'happy'?",
+              "answers": [
+                { "text": "sad", "correct": false },
+                { "text": "angry", "correct": false },
+                { "text": "joyful", "correct": true },
+                { "text": "bored", "correct": false }
+              ],
+              "explanation": "'Joyful' is a synonym of 'happy' as both describe a feeling of pleasure or delight."
+            },
+            {
+              "question": "What does the word 'benevolent' mean?",
+              "answers": [
+                { "text": "kind", "correct": true },
+                { "text": "cruel", "correct": false },
+                { "text": "selfish", "correct": false },
+                { "text": "mean", "correct": false }
+              ],
+              "explanation": "'Benevolent' means showing kindness or goodwill."
+            },
+            {
+              "question": "What is the opposite of 'difficult'?",
+              "answers": [
+                { "text": "hard", "correct": false },
+                { "text": "easy", "correct": true },
+                { "text": "complex", "correct": false },
+                { "text": "complicated", "correct": false }
+              ],
+              "explanation": "'Easy' is the opposite of 'difficult'."
+            },
+            {
+              "question": "Which word is an antonym of 'brave'?",
+              "answers": [
+                { "text": "cowardly", "correct": true },
+                { "text": "strong", "correct": false },
+                { "text": "fearless", "correct": false },
+                { "text": "bold", "correct": false }
+              ],
+              "explanation": "'Cowardly' is the opposite (antonym) of 'brave'."
+            },
+            {
+              "question": "What is the meaning of the word 'elaborate'?",
+              "answers": [
+                { "text": "to explain in detail", "correct": true },
+                { "text": "to simplify", "correct": false },
+                { "text": "to ignore", "correct": false },
+                { "text": "to confuse", "correct": false }
+              ],
+              "explanation": "'Elaborate' means to explain something in great detail."
+            },
+            {
+              "question": "What is the synonym of 'brilliant'?",
+              "answers": [
+                { "text": "shiny", "correct": false },
+                { "text": "intelligent", "correct": true },
+                { "text": "average", "correct": false },
+                { "text": "boring", "correct": false }
+              ],
+              "explanation": "'Brilliant' can mean both shining brightly and being very intelligent."
+            }
+          ]
+        },
+        {
+          "category_name": "Reading Comprehension",
+          "questions": [
+            {
+              "question": "What is the main idea of the passage? 'Sarah loves to read books. She spends hours in the library every day. Her favorite books are adventure novels.'",
+              "answers": [
+                { "text": "Sarah is interested in adventure novels.", "correct": true },
+                { "text": "Sarah dislikes books.", "correct": false },
+                { "text": "Sarah goes to the library every day.", "correct": false },
+                { "text": "Sarah enjoys playing games.", "correct": false }
+              ],
+              "explanation": "The main idea is about Sarah's love for reading, especially adventure novels."
+            },
+            {
+              "question": "Who is the protagonist of the story? 'Tommy found a mysterious key in the garden. He decided to follow the map it came with.'",
+              "answers": [
+                { "text": "Tommy", "correct": true },
+                { "text": "The key", "correct": false },
+                { "text": "The map", "correct": false },
+                { "text": "The garden", "correct": false }
+              ],
+              "explanation": "The protagonist is Tommy, the character taking action in the story."
+            },
+            {
+              "question": "What can be inferred about the character? 'Emily didn't want to go to the party because she was feeling sick.'",
+              "answers": [
+                { "text": "Emily likes to go to parties.", "correct": false },
+                { "text": "Emily is feeling unwell.", "correct": true },
+                { "text": "Emily is excited about the party.", "correct": false },
+                { "text": "Emily is angry with her friends.", "correct": false }
+              ],
+              "explanation": "It can be inferred that Emily is feeling sick because she doesn't want to go to the party."
+            },
+            {
+              "question": "What is the author's purpose in the passage? 'The sun sets behind the hills, painting the sky in beautiful shades of orange and pink.'",
+              "answers": [
+                { "text": "To explain the science behind sunsets", "correct": false },
+                { "text": "To describe a beautiful scene", "correct": true },
+                { "text": "To inform about the time of day", "correct": false },
+                { "text": "To discuss the geography of hills", "correct": false }
+              ],
+              "explanation": "The author is describing a beautiful scene, focusing on the colors of the sunset."
+            },
+            {
+              "question": "What is the tone of the passage? 'The wind howled through the trees, and the sky was filled with dark, ominous clouds.'",
+              "answers": [
+                { "text": "Optimistic", "correct": false },
+                { "text": "Suspenseful", "correct": true },
+                { "text": "Peaceful", "correct": false },
+                { "text": "Joyful", "correct": false }
+              ],
+              "explanation": "The description creates a suspenseful and ominous tone, suggesting something unsettling."
+            },
+            {
+              "question": "What is the meaning of the phrase 'It was a blessing in disguise'?",
+              "answers": [
+                { "text": "It was a good situation that seemed bad at first", "correct": true },
+                { "text": "It was a terrible situation", "correct": false },
+                { "text": "It was a blessing", "correct": false },
+                { "text": "It was a hidden blessing", "correct": false }
+              ],
+              "explanation": "'A blessing in disguise' means something good that initially seemed bad."
+            }
+          ]
+        },
+        {
+          "category_name": "Literary Devices",
+          "questions": [
+            {
+              "question": "What is an example of alliteration?",
+              "answers": [
+                { "text": "The snake slithered silently", "correct": true },
+                { "text": "The wind whispered through the trees", "correct": false },
+                { "text": "The cat sat on the mat", "correct": false },
+                { "text": "The sun set behind the hills", "correct": false }
+              ],
+              "explanation": "Alliteration is the repetition of consonant sounds at the beginning of words, like in 'snake slithered silently'."
+            },
+            {
+              "question": "Which of the following is a metaphor?",
+              "answers": [
+                { "text": "The wind whispered through the trees.", "correct": false },
+                { "text": "The clouds were cotton balls in the sky.", "correct": true },
+                { "text": "The stars were shining brightly.", "correct": false },
+                { "text": "The ocean waves crashed against the rocks.", "correct": false }
+              ],
+              "explanation": "A metaphor compares two things directly, as in 'The clouds were cotton balls', which compares clouds to cotton balls."
+            },
+            {
+              "question": "What is the meaning of the simile in the sentence 'Her smile was as bright as the sun'?",
+              "answers": [
+                { "text": "Her smile was really bright.", "correct": true },
+                { "text": "Her smile was dull.", "correct": false },
+                { "text": "Her smile was like the sun.", "correct": false },
+                { "text": "Her smile was dim.", "correct": false }
+              ],
+              "explanation": "The simile 'as bright as the sun' compares her smile to the sun, suggesting it was very bright."
+            },
+            {
+              "question": "What type of figurative language is used in the phrase 'The stars danced in the sky'?",
+              "answers": [
+                { "text": "Personification", "correct": true },
+                { "text": "Simile", "correct": false },
+                { "text": "Metaphor", "correct": false },
+                { "text": "Hyperbole", "correct": false }
+              ],
+              "explanation": "This is personification because stars, which are not alive, are described as 'dancing'."
+            },
+            {
+              "question": "Which of the following sentences contains hyperbole?",
+              "answers": [
+                { "text": "I have a ton of homework", "correct": true },
+                { "text": "The moon is a silver coin in the sky", "correct": false },
+                { "text": "The clouds were soft like cotton", "correct": false },
+                { "text": "The sun painted the sky orange", "correct": false }
+              ],
+              "explanation": "Hyperbole is an exaggerated statement, such as 'I have a ton of homework', which isn't literally true."
+            },
+            {
+              "question": "What is an example of onomatopoeia?",
+              "answers": [
+                { "text": "The bee buzzed in the garden.", "correct": true },
+                { "text": "The wind howled through the trees.", "correct": false },
+                { "text": "The stars twinkled brightly.", "correct": false },
+                { "text": "The cat sat by the window.", "correct": false }
+              ],
+              "explanation": "Onomatopoeia refers to words that imitate the sounds they represent, like 'buzzed'."
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

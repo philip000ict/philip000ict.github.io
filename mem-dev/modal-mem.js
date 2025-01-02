@@ -8,11 +8,13 @@
     let player = 1;
     let players = [0,0];
     let parentDiv = document.getElementById('grid-container');
+    var startbutton = document.getElementById("startButton");
     var startmodal = document.getElementById("startModal");
-    var modal = document.getElementById("myModal");
+    var mymodal = document.getElementById("myModal");
     var nomodal = document.getElementById("noModal");
-    var closer = document.getElementsByClassName("close")[0];
-    var clapper = document.getElementsByClassName("clap")[0];
+    // var closemodal = document.getElementsByClassName("modal");
+    // var closer = document.getElementsByClassName("close")[0];
+    // var clapper = document.getElementsByClassName("clap")[0];
     var clipper = document.getElementById("startClick");
     var options = document.getElementById("topicSelect");
     // var optionsAnimal = document.getElementById("topicSelectAnimal");
@@ -48,25 +50,32 @@
 
 
     // When the user clicks on <span> (x), close the modal
-    closer.onclick = function() {
-    modal.style.display = "none";
+    // closemodal.onclick = function() {
+    //     for (let i = 0; i < closemodal.length; i++) {
+    //         closemodal[i].style.display = "none";
+    //         console.log("closemodal[i] = "+closemodal[i])
+    //       }
+    //     }
+
+    mymodal.onclick = function() {
+    mymodal.style.display = "none";
     }
-    clapper.onclick = function() {
+    nomodal.onclick = function() {
     nomodal.style.display = "none";
     }
-    clipper.onclick = function() {
- 
+    startbutton.onclick = function() {
     startmodal.style.display = "none";
+    topicFunction();
     }
     options.onselection = function(){
         document.getElementById("playbox").innerText= topicNames[document.getElementById("topicSelect").value];
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == "modal") {
+        mymodal.style.display = "none";
         nomodal.style.display = "none"; 
-        startmodal.style.display = "none";
+        //startmodal.style.display = "none";
     }
     }
 
@@ -129,7 +138,7 @@
     function gameTopicInit(Names){
         for(i=0; i < Names.length; i +=2){
             let gempair = [];
-            gempair[0] = '<img src="'+Names[i]+'" />';
+            gempair[0] = '<img src="'+Names[i]+'" class="img-item tile" />';
             gempair[1] = Names[i+1];
             gemPairs.push(gempair);
             }
@@ -177,11 +186,11 @@
     }
  
 
-function changetheme(){
-    console.log("The times they are a' changin'")
-    tilereset();
-    init(toys);
-}
+// function changetheme(){
+//     console.log("The times they are a' changin'")
+//     tilereset();
+//     init(toys);
+// }
 
     function tileturn(){
         let clickTile = event.target.getAttribute("id");
@@ -195,6 +204,9 @@ function changetheme(){
                     tile1 = JSON.parse(JSON.stringify(gameTiles[i]));
                     tile1 = gameTiles[i];
                     console.log("tile1 match = "+tile1.mtile);
+                    //gameTiles[i].innerHTML = tile1.face;
+                    // gameTiles[i].removeEventListener("click", tileturn);
+                    //gameTiles[i].
                     event.target.innerHTML = tile1.face;
                     event.target.removeEventListener("click", tileturn);
                     choice=1;
@@ -216,7 +228,7 @@ function changetheme(){
             console.log("player = "+player);
                 if(tile1.mtile == tile2.idtile){
 
-                    modal.style.display = "block";
+                    mymodal.style.display = "block";
                     console.log("Choice = "+choice+" \ntile1 = "+tile1.face+" tile2 = "+tile2.idtile);
                     
                     console.log("ingame tile1 = " + JSON.stringify(tile1));
