@@ -15,17 +15,24 @@
     <link href="flipper.css" rel="stylesheet" type="text/css" />
      <link href="modal.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
+        body{
+                padding-top: 40px;
+              background-image: url("img/babystuff-sm.png");
+              background-repeat: repeat;
+              background-color: white;
+        }
         #wrapper{
-
+            padding-top: 5px;
             max-width: 400px;
             min-width: 360px;
             margin: auto;
+            background-color: rgba(0, 0, 128, 0.2);
         }
         #grid-container{
             grid-template-columns: auto auto  ;
             min-width: 360px;
-            max-width: 60vh;
             min-height: 600px;
+            padding-left: 10px;
         }
         img{
             height: 100px;
@@ -58,7 +65,7 @@
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
        h1 {
-            background-color: black;
+            background-color: blue;
             color: white;
             text-align:center;
         }
@@ -67,15 +74,19 @@
           height: 30px;
           font-size:18px;
           margin: 5px ;
+          background-color: blue;
         }
         .round{
           width: 40px;
           height: 40px;
           font-size:20px;
           border-radius: 20px;
+          background-color: blue;
         }
         .button-panel{
           min-width: 360px;
+          padding-left: 40px;
+          padding-top: 20px;
         }
 
     </style>   
@@ -86,6 +97,7 @@
 
 <body>
 <div id="wrapper" >
+    <h1>Click to hear the words</h1>
     <div id="grid-container"></div>
 
 
@@ -122,9 +134,10 @@
   </div>
   <div class = "button-panel">
     <button class="panel round"><a href="../index.html"><i class="fa fa-home"></i></a></button>
-    <button id="toysTopic" class="panel" onclick="changeGame(toysarray)"> Toys </button>
+    <button type="button"  class="panel" style="width:80%;"><a href="mem-dev-speaker.html">  Refresh Game  </a></button>
+<!--     <button id="toysTopic" class="panel" onclick="changeGame(toysarray)"> Refresh Page </button>
     <button id="animalTopic"  class="panel" onclick="changeGame(animalarray)"> Animals </button>
-    <button id="gemsTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button>
+    <button id="gemsTopic"  class="panel" onclick="changeGame(gemsarray)"> Gems </button> -->
   </div>
 </div>  
       <script src="speaker.js"></script> 

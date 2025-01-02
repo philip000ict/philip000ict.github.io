@@ -22,12 +22,12 @@ body{
     background: powderblue;
     background-image: linear-gradient( rgb(125, 125, 252),darkblue);
     padding:0 20px 20px 0;
-}m
+}
 h1{
     text-align: center;
 }
 .img-item{
-    height: 11vw;
+    height: 17vh;
     width:16vw;
     border-radius: 10px;
     /* border: .5vw solid darkblue;
@@ -48,13 +48,13 @@ h1{
 }
 .grid-item{
     display: grid;
-    height: 10vw;
+    height: 15vh;
     min-height: 50px;
     width:15vw;
     min-width: 70px;
     margin: 1vw auto;
     font-weight:bold;
-    font-size:3.5vw;
+    font-size:3.5vh;
     text-align:center;
     align-items: center;
     color:white;
@@ -67,19 +67,19 @@ h1{
 }
 .panel{
     display: inline;
-    height: 5vw;
+    height: 5vh;
     min-height: 1.2em;
-    width:16vw;
-    margin: 1vw;
+    width:16vh;
+    margin: 1vh;
     font-weight:bold;
-    font-size:2vw;
+    font-size:2vh;
     text-align:center;
     align-items: center;
     color:white;
     background: darkblue;
     border-width: 3px;
     border-color: yellow;
-    border-radius: 3vw;
+    border-radius: 3vh;
 }
 .button-panel{
     display:block;
