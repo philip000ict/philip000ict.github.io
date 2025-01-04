@@ -1,21 +1,33 @@
-
+#wrapper{
+    max-width: 1440px;
+    margin: auto;
+}
+header{
+    width: 100%;
+    
+    height: 18px;
+    color: burlywood;
+    text-align: center;
+    background-color: brown;
+}
 
     #tileContainer{
+        max-width: 1440px;
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
+
     }
     .tile{
         width: 30vw;
         height: 18vw;
-        font-size: 24px;
         color: burlywood;
         text-align: center;
         background-color: brown;
     }
-    #info{
-        width: 92vw;
-        height: 25vw;
-        font-size: 24px;
+footer{
+        width: 100%;
+        font-size: 18px;
+        max-height: 100px;
         color: burlywood;
         text-align: center;
         background-color: brown;
@@ -34,7 +46,8 @@
       } */
     
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 607px) {
+/* @media only screen and (max-width: 607px) { */
+/* @media only screen and (max-width: 499px) {
     #tileContainer{
         grid-template-columns: auto auto auto;
     }
@@ -44,34 +57,101 @@
         height: 14vw;
         font-size: 18px; 
     }
+  } */
+   /* Extra small devices (phones, 600px and down) 
+  Armour X8 720x1440 DPR 360x592, oppo A17 720x1612 DPR 360x806 */
+  @media only screen and (max-width: 299px) {
+    header{
+        height: 22vw;
+    }
+    #tileContainer{
+        grid-template-columns: auto auto;
+    }
+    .tile{
+        margin: 1.5vw 2.5vw;
+        width: 40vw;
+        height: 22vw;
+        font-size: 5vw;
+        font-weight: bold;
+        line-height: 18vw;
+    }
   }
-  /* Small devices (portrait tablets and large phones, 600px and up)Armour X8 720x1440, oppo A17 720x1612*/
-  @media only screen and (min-width: 608px) {
+  /* Small devices (portrait tablets and large phones, 600px and up)*/
+  @media only screen and (min-width: 300px) {
+    header{
+        height: 20vw;
+    }
+    #tileContainer{
+        grid-template-columns: auto auto auto;
+    }
+    .tile{
+        margin: 1.2vw;
+        width: 30vw;
+        height: 20vw;
+        font-size: 5vw;
+        font-weight: bold;
+        line-height: 18vw;
+    }
+  }
+/* Medium devices (landscape tablets, 718px and up) 
+ Lenovo tablet 640x927 */
+@media only screen and (min-width: 500px) {
+    header{
+        height: 10vw;
+    }
     #tileContainer{
         grid-template-columns: auto auto auto auto;
     }
     .tile{
         margin: 1.2vw;
         width: 20vw;
-        height: 12vw;
-        font-size: 5vw; 
+        height: 15vw;
+        font-size: 4vw;
+        font-weight: bold;
+        line-height: 10vw; 
     }
-  }
-/* Medium devices (landscape tablets, 718px and up) */
-@media only screen and (min-width: 912px) {
+}
+/* Medium devices (landscape tablets, 718px and up) 
+Lenovo tablet 1072x495 */
+@media only screen and (min-width: 700px) {
+    header{
+        height: 10vw;
+    }
     #tileContainer{
         grid-template-columns: auto auto auto auto auto;
     }
     .tile{
-        margin: 1.5vw;
+        margin: 1.2vw;
         width: 15vw;
         height: 10vw;
-        font-size: 30px; 
+        font-size: 4vw;
+        font-weight: bold;
+        line-height: 10vw; 
     }
 }
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1216px) {
+@media only screen and (min-width: 700px) {
+    header{
+        height: 10vw;
+    }
     #tileContainer{
+        grid-template-columns: auto auto auto auto auto;
+    }
+    .tile{
+        margin: 0.8vw;
+        width: 16vw;
+        height: 10vw;
+        font-size: 36px; 
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up)
+motorolla edge neo 50 1220x2670 DPR 427x803*/
+@media only screen and (min-width: 1000px) {
+    header{
+        height: 8vw;
+    }
+    #tileContainer{
+        max-width: 1460px;
         grid-template-columns: auto auto auto auto auto auto;
     }
     .tile{
@@ -81,15 +161,21 @@
         font-size: 36px; 
     }
 }
-/* Extra large devices (large laptops and desktops, 1200px and up)motorolla edge neo 50 1220x2670 */
-@media only screen and (min-width: 1280px) {
+/* Extra large devices (large laptops and desktops, 1200px and up)
+motorolla edge neo 50 1220x2670 DPR 427x803*/
+@media only screen and (min-width: 1460px) {
+    header{
+        height: 100px;
+    }
     #tileContainer{
+        max-width: 1460px;
         grid-template-columns: auto auto auto auto auto auto;
     }
     .tile{
-        margin: 0.8vw;
-        width: 14vw;
-        height: 8vw;
+        margin: 10px;
+        width: 200px;
+        height: 120px;
         font-size: 36px; 
+        line-height: 36px;
     }
 }
