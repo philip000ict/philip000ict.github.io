@@ -33,6 +33,8 @@ switch(Math.floor(vw/304)) {
       break;
     default:
         console.log("resolution; "+vw+"px")
+        wide = 6
+        deep = 6
   } 
 
 for (let d = 0; d<deep; d++){
@@ -45,3 +47,5 @@ for (let d = 0; d<deep; d++){
         tileContainer.appendChild(tileDiv);
     }
 }
+const info = "vw = "+vw+"\nvh = "+vh+"\nwindow.devicePixelRatio = "+window.devicePixelRatio
+document.getElementById("info").innerText= info
