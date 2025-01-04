@@ -1,0 +1,87 @@
+
+
+    #tileContainer{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    .tile{
+        width: 30vw;
+        height: 20vw;
+        font-size: 24px;
+        color: burlywood;
+        text-align: center;
+        background-color: brown;
+    }
+
+    /* @media only screen and (orientation: portait) {
+        #tileContainer{
+            grid-template-columns: auto auto auto auto;
+        }
+        .tile{
+            margin: 1.5vw;
+            width: 20vw;
+            height: 14vw;
+            font-size: 18px; 
+        }
+      } */
+    
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 607px) {
+    #tileContainer{
+        grid-template-columns: auto auto auto;
+    }
+    .tile{
+        margin: 1.5vw;
+        width: 28vw;
+        height: 14vw;
+        font-size: 18px; 
+    }
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up)Armour X8 720x1440, oppo A17 720x1612*/
+  @media only screen and (min-width: 608px) {
+    #tileContainer{
+        grid-template-columns: auto auto auto auto;
+    }
+    .tile{
+        margin: 1.2vw;
+        width: 20vw;
+        height: 12vw;
+        font-size: 5vw; 
+    }
+  }
+/* Medium devices (landscape tablets, 718px and up) */
+@media only screen and (min-width: 912px) {
+    #tileContainer{
+        grid-template-columns: auto auto auto auto auto;
+    }
+    .tile{
+        margin: 1.5vw;
+        width: 15vw;
+        height: 10vw;
+        font-size: 30px; 
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1216px) {
+    #tileContainer{
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    .tile{
+        margin: 0.8vw;
+        width: 14vw;
+        height: 8vw;
+        font-size: 36px; 
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up)motorolla edge neo 50 1220x2670 */
+@media only screen and (min-width: 1280px) {
+    #tileContainer{
+        grid-template-columns: auto auto auto auto auto auto;
+    }
+    .tile{
+        margin: 0.8vw;
+        width: 14vw;
+        height: 8vw;
+        font-size: 36px; 
+    }
+}
