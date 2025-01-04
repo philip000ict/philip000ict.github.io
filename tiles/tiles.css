@@ -6,7 +6,15 @@
     }
     .tile{
         width: 30vw;
-        height: 20vw;
+        height: 18vw;
+        font-size: 24px;
+        color: burlywood;
+        text-align: center;
+        background-color: brown;
+    }
+    #info{
+        width: 92vw;
+        height: 25vw;
         font-size: 24px;
         color: burlywood;
         text-align: center;
