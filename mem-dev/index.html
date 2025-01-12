@@ -40,10 +40,12 @@
             margin:10px;
         }
         .round{
-          width: 5vw;
-          height: 5vw;
+          width: 4vw; 
+          min-width: 35px;
+          height: 4vw;
+          min-height: 35px;
           font-size:3vw;
-          border-radius: 2.5vw;
+          border-radius: 2vw;
           padding:0;
         }
         a{
@@ -64,9 +66,9 @@
         <div class="button-panel">
             <button class="panel round"><a href="../index.html"><i class="fa fa-home"  style="color:white;"></i></a></button>
             <button type="button"  id = "playbox" class = "panel"  >Home</button>
-            <button type="button"  id = "playbox0" class = "panel"  >Players</button>
-            <button type="button"  id = "playbox1" class = "panel"  >0</button>
-            <button type="button"  id = "playbox2" class = "panel"  >0</button>
+            <button type="button"  id = "playbox0" class = "panel"  >Team</button>
+            <button type="button"  id = "playbox1" class = "panel round"  >0</button>
+            <button type="button"  id = "playbox2" class = "panel round"  >0</button>
         </div>
         <div id="grid-container"></div>
         <!-- <div class="button-panel" >
@@ -100,7 +102,7 @@
                 </select>
             </form>
             
-            <button id="startButton" class = "panel span3-2" style="width:90%;" ><a id="startClick"  style="color:white;" class=""> CLICK TO PLAY</a></button>
+            <button id="startButton" class = "panel span3-2" style="width:90%;" ><a id="startClick"  style="color:white;" class="">PLAY</a></button>
     </div>
   </div>
 <!-- The winning Modal -->

@@ -66,13 +66,13 @@ h1{
     box-shadow: 5px 5px 15px yellow
 }
 .panel{
-    display: inline;
+    display: inline-block;
     /* height: 5vh; */
     min-height: 1.2em;
-    width:12vw;
+    /* width:15vw; */
     margin: 1vh;
     font-weight:bold;
-    font-size:2vh;
+    font-size:calc(10px + 1.5vw);
     text-align:center;
     align-items: center;
     color:white;
@@ -84,7 +84,7 @@ h1{
 .button-panel{
     display:block;
     justify-content: space-between;
-    margin-left:50px;
+    padding-left:20px;
 }
 a{
     color:aliceblue;

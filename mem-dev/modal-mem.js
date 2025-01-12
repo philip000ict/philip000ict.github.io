@@ -146,7 +146,7 @@
             console.log("gameTopicInit complete")
         }  
     function playersInit(){
-        document.getElementById("playbox0").innerHTML="Player "+ player ;
+        document.getElementById("playbox0").innerHTML="Team "+ player ;
             document.getElementById("playbox").innerHTML="Gems";
             console.log("playerInit complete")
         }

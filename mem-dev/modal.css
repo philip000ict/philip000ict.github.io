@@ -33,7 +33,7 @@
   text-align: center;
 }
 .span1-2{
-mpadding-top: 20px;
+  padding-top: 20px;
   grid-column: 1 / span 2;
 }
 .span3-2{
@@ -57,7 +57,7 @@ margin-top: 60px;
 }
 
 .modal-item{
-    height: 17vh;
+    height: 12vw;
     width:18vw;
     font-weight:bold;
     font-size:3vw;
