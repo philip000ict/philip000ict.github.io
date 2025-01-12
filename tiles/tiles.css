@@ -15,7 +15,8 @@ header{
         max-width: 1440px;
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
-
+        gap: 10px;
+        margin:10px 0;
     }
     .tile{
         width: 30vw;
@@ -68,12 +69,11 @@ footer{
         grid-template-columns: auto auto;
     }
     .tile{
-        margin: 1.5vw 2.5vw;
-        width: 40vw;
-        height: 22vw;
+        width: 45vw;
+        height: 30vw;
         font-size: 5vw;
         font-weight: bold;
-        line-height: 18vw;
+
     }
   }
   /* Small devices (portrait tablets and large phones, 600px and up)*/
@@ -85,7 +85,6 @@ footer{
         grid-template-columns: auto auto auto;
     }
     .tile{
-        margin: 1.2vw;
         width: 30vw;
         height: 20vw;
         font-size: 5vw;
@@ -103,7 +102,6 @@ footer{
         grid-template-columns: auto auto auto auto;
     }
     .tile{
-        margin: 1.2vw;
         width: 20vw;
         height: 15vw;
         font-size: 4vw;
@@ -121,7 +119,6 @@ Lenovo tablet 1072x495 */
         grid-template-columns: auto auto auto auto auto;
     }
     .tile{
-        margin: 1.2vw;
         width: 15vw;
         height: 10vw;
         font-size: 4vw;
@@ -138,7 +135,6 @@ Lenovo tablet 1072x495 */
         grid-template-columns: auto auto auto auto auto;
     }
     .tile{
-        margin: 0.8vw;
         width: 16vw;
         height: 10vw;
         font-size: 36px; 
@@ -172,7 +168,7 @@ motorolla edge neo 50 1220x2670 DPR 427x803*/
         grid-template-columns: auto auto auto auto auto auto;
     }
     .tile{
-        margin: 10px;
+
         width: 200px;
         height: 120px;
         font-size: 36px; 

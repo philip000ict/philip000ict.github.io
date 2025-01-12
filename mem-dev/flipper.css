@@ -67,9 +67,9 @@ h1{
 }
 .panel{
     display: inline;
-    height: 5vh;
+    /* height: 5vh; */
     min-height: 1.2em;
-    width:16vh;
+    width:12vw;
     margin: 1vh;
     font-weight:bold;
     font-size:2vh;
@@ -84,7 +84,7 @@ h1{
 .button-panel{
     display:block;
     justify-content: space-between;
-    margin:auto;
+    margin-left:50px;
 }
 a{
     color:aliceblue;
