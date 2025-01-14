@@ -10,43 +10,21 @@ let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight
 console.log("vh = "+vh)
 console.log("window.devicePixelRatio = "+window.devicePixelRatio)
 
+function refresh(){
+     location.reload(); 
+}
+
 //for mobile DPR 360 and 427 ***rep/-304
+// if(vw=300){refresh()}else
 if(vw<300){ wide = 2; deep = 6} else
+// if(vw=301){refresh()}else
+// if(vw=490){refresh()}else
 if(vw<500){ wide = 3; deep = 6} else
-if(vw<700){ wide = 4; deep = 5} else
-if(vw<1000){ wide = 5; deep = 4} 
-else{ wide = 6; deep = 5} 
-//         break;
-//     case 2:
-//         console.log("400px and up; "+vw+"px")
-//         wide = 3
-//         deep = 6
-//       break;
-//     case 3:
-//         console.log("600px and up; "+vw+"px")
-//         wide = 4
-//         deep = 5
-//       break;
-//     case 4:
-//         console.log("800px and up; "+vw+"px")
-//         wide = 5
-//         deep = 4
-//       break;
-//     case 5:
-//         console.log("1000px and up; "+vw+"px")
-//         wide = 5
-//         deep = 4
-//       break;
-//     case 6:
-//         console.log("1200px and up; "+vw+"px")
-//         wide = 6
-//         deep = 5
-//       break;
-//     default:
-//         console.log("resolution; "+vw+"px")
-//         wide = 5
-//         deep = 4
-//   } 
+// if(vw=501){refresh()}else
+// if(vw=699){refresh()}else
+if(vw<700){ wide = 4; deep = 5} else    
+// if(vw=700){refresh()}else
+    { wide = 5; deep = 4} 
 
 for (let d = 0; d<deep; d++){
     for (let w = 0; w<wide; w++){
@@ -59,5 +37,5 @@ for (let d = 0; d<deep; d++){
         tileContainer.appendChild(tileDiv);
     }
 }
-const info = "vw = "+vw+"\nvh = "+vh+"\nwindow.devicePixelRatio = "+window.devicePixelRatio
+const info = "vw = "+vw+"     vh = "+vh+"     window.devicePixelRatio = "+window.devicePixelRatio
 document.getElementById("info").innerText= info

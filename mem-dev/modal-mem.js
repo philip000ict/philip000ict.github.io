@@ -90,22 +90,6 @@
                 init(topicArray[topicValue]);
                 document.getElementById("playbox").innerText= topicNames[topicValue];
               }
-        // optionsAnimal.onclick = function() {
-        //     init(topicArray[2]);
-        //     document.getElementById("playbox").innerText= topicNames[2];    
-        // }
-        // optionsGems.onclick = function() {
-        //     init(topicArray[0]);
-        //     document.getElementById("playbox").innerText= topicNames[0];
-        // }
-        // optionsToys.onclick = function() {
-        //     init(topicArray[1]);
-        //     document.getElementById("playbox").innerText= topicNames[1];
-        // }
-        // optionsCells.onclick = function() {
-        //     init(topicArray[3]);
-        //     document.getElementById("playbox").innerText= topicNames[3];
-        // }
 
     const tiles = document.querySelectorAll('.tile')
 		tiles.forEach((tile) => {
@@ -185,12 +169,15 @@
         console.log("arrayInit complete");
     }
  
-
-// function changetheme(){
-//     console.log("The times they are a' changin'")
-//     tilereset();
-//     init(toys);
-// }
+    function speak(tileName){
+        const voices = speechSynthesis.getVoices();
+            let utterance = new SpeechSynthesisUtterance(tileName)
+            //console.log( "voices 129 = " + voices)
+            // 4 5 6 7 10 13 -14 -18 -24 30 34 -40 -44
+            // utterance.voice = voices[44];
+            window.speechSynthesis.speak(utterance)
+        // }
+        }
 
     function tileturn(){
         let clickTile = event.target.getAttribute("id");
@@ -204,6 +191,7 @@
                     tile1 = JSON.parse(JSON.stringify(gameTiles[i]));
                     tile1 = gameTiles[i];
                     console.log("tile1 match = "+tile1.mtile);
+                    console.log("ingame tile1 = " + JSON.stringify(tile1));
                     //gameTiles[i].innerHTML = tile1.face;
                     // gameTiles[i].removeEventListener("click", tileturn);
                     //gameTiles[i].

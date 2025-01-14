@@ -118,6 +118,20 @@ function changetheme(){
     init(toys);
 }
 
+// function startnow(){
+//     speak('welcome to the game of toys')
+//     startmodal.style.display = "none";
+//     }
+function speak(tileName){
+    const voices = speechSynthesis.getVoices();
+        let utterance = new SpeechSynthesisUtterance(tileName)
+        //console.log( "voices 129 = " + voices)
+        // 4 5 6 7 10 13 -14 -18 -24 30 34 -40 -44
+        utterance.voice = voices[44];
+        window.speechSynthesis.speak(utterance)
+    // }
+    }
+
     function tileturn(){
         let clickTile = event.target.getAttribute("id");
         console.log("choice =  "+ choice);
@@ -130,7 +144,7 @@ function changetheme(){
                     tile1 = JSON.parse(JSON.stringify(gameTiles[i]));
                     tile1 = gameTiles[i];
                     console.log("tile1 match = "+tile1.mtile);
-                    //console.log("ingame tile1 = " + JSON.stringify(tile1));
+                    console.log("ingame tile1 = " + JSON.stringify(tile1));
                     //tile1.idtile=i; 
                     event.target.innerHTML = tile1.face;
                     //document.getElementById(tile1.idtile).removeEventListener("click", tileturn);
